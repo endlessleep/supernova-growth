@@ -1154,19 +1154,81 @@ mjx-container[display="true"] { max-width:100%; overflow-x:auto; overflow-y:hidd
 <!-- Phase diagram and three classroom comparative-dynamics cases. -->
 <section class="concept-card purple-top phase-section" id="ramsey-phase-diagram">
  <div class="section-header"><span class="section-label">Phase diagram</span><h3>Read the arrows, then draw the saddle path</h3></div>
- <p><strong>Horizontal axis:</strong> $k=K/(AL)$. <strong>Vertical axis:</strong> $c=C/(AL)$. Each point gives the economy’s position; the arrows tell you where it moves. <strong>Neither axis measures time:</strong> time passes as the economy moves from one point to another.</p>
+ <p>The <strong>horizontal axis</strong> shows $k=K/(AL)$, capital per effective worker; the <strong>vertical axis</strong> shows $c=C/(AL)$, consumption per effective worker. A point gives the current state of the economy, and the arrows show how $k$ and $c$ change. <strong>Neither axis represents time:</strong> time passes as the economy moves from one point to another.</p>
  <figure class="phase-figure"><a href="images/ramsey-phase-original.png" target="_blank" rel="noopener"><img src="images/ramsey-phase-original.png" alt="Original Ramsey diagram with the four red and blue arrow pairs and the black dashed saddle path."></a><figcaption>Your original diagram. Click any graph to enlarge it.</figcaption></figure>
- <div class="phase-rule red-rule"><h4>1 · Red: does consumption rise or fall?</h4><div class="math-display">$$g_c=0\quad\Longleftrightarrow\quad\alpha k^{\alpha-1}=n+\delta+g_A+\rho$$</div><p>Start with the consumption-growth equation and set its growth rate to zero. The condition contains $k$, but not the level of $c$: every consumption level paired with this $k^*$ gives zero consumption growth. This is why you draw a <strong>vertical line</strong>, not a horizontal one.</p><p> To its left, capital is scarcer and its marginal product is higher. The return encourages the household to shift consumption toward the future: <strong>consumption rises ↑</strong>. To its right, <strong>consumption falls ↓</strong>.</p></div>
- <div class="phase-rule blue-rule"><h4>2 · Blue: does capital rise or fall?</h4><div class="math-display">$$\frac{dk(t)}{dt}=0\quad\Longleftrightarrow\quad c=k^\alpha-(n+\delta+g_A)k$$</div><p>Set capital accumulation to zero and solve for $c$. The curve gives the consumption level compatible with <strong>maintaining the current capital per effective worker</strong>: output $k^\alpha$ minus replacement needs $(n+\delta+g_A)k$.</p><p>Draw the <strong>hump-shaped curve</strong>. Output rises with capital at a decreasing marginal rate, while replacement needs rise proportionally; the amount left for consumption first rises and then falls.</p><p> Below it, consumption leaves enough resources for capital to grow: <strong>→</strong>. Above it, capital falls: <strong>←</strong>. Its peak is at Golden Rule capital $k^{**}$, to the right of $k^*$; the dashed blue vertical guide marks that peak.</p></div>
- <div class="phase-rule"><h4>3 · Combine the two signs in each region</h4><p>Choose a point and first locate it relative to the red line: that determines the vertical arrow. Then locate it relative to the blue curve: that determines the horizontal arrow. Draw both arrows from the same point, as in the original diagram.</p></div>
- <div class="phase-table-wrap"><table class="comparison-table phase-table"><thead><tr><th>Position</th><th>Capital</th><th>Consumption</th><th>Direction</th></tr></thead><tbody>
- <tr><td>Left of red, above blue</td><td class="blue-text">←</td><td class="red-text">↑</td><td>↖</td></tr>
- <tr><td>Left of red, below blue</td><td class="blue-text">→</td><td class="red-text">↑</td><td>↗</td></tr>
- <tr><td>Right of red, above blue</td><td class="blue-text">←</td><td class="red-text">↓</td><td>↙</td></tr>
- <tr><td>Right of red, below blue</td><td class="blue-text">→</td><td class="red-text">↓</td><td>↘</td></tr>
- </tbody></table></div>
- <div class="phase-rule"><h4>4 · Mark the steady state and add the saddle path</h4><p>The red line alone stops consumption growth; the blue curve alone stops capital accumulation. <strong>Only their intersection stops both.</strong> Mark it $E=(k^*,c^*)$: read $k^*$ on the horizontal axis and $c^*=(k^*)^\alpha-(n+\delta+g_A)k^*$ on the vertical axis. The saddle path gives the <strong>optimal initial consumption for each inherited capital stock</strong>. Its left branch goes up and right toward $E$; its right branch goes down and left toward $E$.</p><p>When drawing it, use the four arrow pairs to place it on the correct side of the blue curve, and point its arrows <strong>toward $E$</strong>. The two coloured curves are zero-change conditions, <strong>not paths the economy must follow</strong>. The saddle path is the trajectory leading to their intersection. The arrows guide its shape, not its exact curvature. The optimal path must also satisfy the accumulation equation and transversality condition.</p></div>
- <p class="phase-small">The original labels “dc/c = 0” and “dk/k = 0” mean zero growth over time. In the accumulation equation, the full replacement term is $(n+\delta+g_A)k$ — including the final $k$.</p>
+ <div class="phase-rule red-rule">
+  <h4>1 · Red line — What happens to consumption?</h4>
+  <div class="math-display">$$g_c=\frac{\dot c}{c}=\frac{1}{\varepsilon}\left[f'(k)-(n+g_A+\delta+\rho)\right]$$</div>
+  <p>Here $f(k)=k^\alpha$, as elsewhere in this course. The marginal return $f'(k)$ is the reward from giving up some consumption today and investing instead. The term $n+g_A+\delta+\rho$ is the required return, or hurdle, that makes postponing consumption worthwhile. The positive factor $1/\varepsilon$ determines how strongly consumption responds, but does not change the sign.</p>
+  <div class="math-display">$$\dot c=0\quad\Longleftrightarrow\quad f'(k^*)=n+g_A+\delta+\rho$$</div>
+  <p><strong>Why is the red line vertical?</strong> This condition determines one capital level $k^*$, but no particular consumption level. Every point with $k=k^*$, whatever its height $c$, therefore has zero consumption growth.</p>
+  <p><strong>On the red line,</strong> $k=k^*$ implies $f'(k)=n+g_A+\delta+\rho$, hence $g_c=0$. Consumption is <strong>not zero</strong>: it is momentarily constant. Thus $c_{\text{future}}=c_{\text{today}}$ if the economy remains on this line; away from the steady state, capital can move it off the line.</p>
+  <p><strong>Left of the red line,</strong> $k&lt;k^*$ means less capital per effective worker. With diminishing marginal returns, less capital means a higher marginal product:</p>
+  <div class="math-display">$$k&lt;k^*\Rightarrow f'(k)&gt;n+g_A+\delta+\rho\Rightarrow g_c&gt;0\Rightarrow c_{\text{future}}&gt;c_{\text{today}}$$</div>
+  <p>Capital is relatively scarce, so an additional unit is very productive. This makes saving and investing today attractive: the household is willing to give up some current consumption to build capital and obtain more output later, allowing higher future consumption. This explains the incentive to postpone consumption; whether capital actually rises at a given point also depends on the blue curve.</p>
+  <div class="key-note amber">
+   <strong>A lower level today is not a fall over time.</strong>
+   <div class="math-display">$$\boxed{\begin{gathered}\text{lower current}\\\text{level of }c\\\neq\\\text{consumption decreasing}\\\text{over time}\end{gathered}}$$</div>
+   <p>“Choosing less consumption today than one otherwise would” compares two possible <strong>levels at the same date</strong>. By contrast, $\dot c&lt;0$ means consumption falls from today to the future. A household can invest heavily and choose a relatively low $c$ today while $c_{\text{future}}&gt;c_{\text{today}}$, so $\dot c&gt;0$ and $g_c&gt;0$.</p>
+   <p><strong>“Low today” describes the height; “rising over time” describes the slope of the consumption path.</strong> A low starting point can have a positive slope. Being left of red does not mean consumption is low.</p>
+  </div>
+  <p><strong>Right of the red line,</strong> $k&gt;k^*$ means capital is relatively abundant. Diminishing marginal returns imply a lower marginal product:</p>
+  <div class="math-display">$$k&gt;k^*\Rightarrow f'(k)&lt;n+g_A+\delta+\rho\Rightarrow g_c&lt;0\Rightarrow c_{\text{future}}&lt;c_{\text{today}}$$</div>
+  <p>Investing one more unit brings a low return, so the household has less incentive to sacrifice present consumption. It prefers relatively more consumption today rather than postponing it: the optimal consumption path slopes downward, $\dot c&lt;0$. This does not say that current $c$ is low; it says that future consumption is lower than current consumption.</p>
+  <div class="math-display">$$\begin{aligned}\text{Left of red: }&amp; k&lt;k^*\Rightarrow f'(k)\text{ high}\Rightarrow g_c&gt;0\Rightarrow c\uparrow\\\text{On red: }&amp; k=k^*\Rightarrow g_c=0\Rightarrow c\text{ constant locally}\\\text{Right of red: }&amp; k&gt;k^*\Rightarrow f'(k)\text{ low}\Rightarrow g_c&lt;0\Rightarrow c\downarrow\end{aligned}$$</div>
+  <p><strong>The red line tells us whether consumption rises or falls over time. It does not determine the current level of consumption.</strong> These arrows describe the direction of change at the current point.</p>
+ </div>
+ <div class="phase-rule blue-rule">
+  <h4>2 · Blue curve — What happens to capital?</h4>
+  <div class="math-display">$$\dot k=f(k)-c-(n+\delta+g_A)k$$
+  $$\dot k=\underbrace{[f(k)-c]}_{\text{gross investment}}-\underbrace{(n+\delta+g_A)k}_{\text{break-even investment}}$$</div>
+  <p>Output is split between consumption and investment, so gross investment is $i=f(k)-c$. Part of it, $(n+\delta+g_A)k$, is needed simply to offset depreciation and equip a growing effective workforce, keeping capital per effective worker unchanged.</p>
+  <div class="math-display">$$\dot k=0\quad\Longleftrightarrow\quad c=f(k)-(n+\delta+g_A)k$$</div>
+  <p>For each $k$, the blue curve gives the exact consumption level that leaves just enough investment to maintain current capital per effective worker. Its hump shape reflects diminishing marginal returns to output against proportional break-even needs; its peak is at Golden Rule capital $k^{**}$.</p>
+  <p><strong>Below the blue curve,</strong> actual consumption is lower than this maintenance-compatible level. Therefore $f(k)-c$ is larger, and gross investment exceeds break-even investment:</p>
+  <div class="math-display">$$f(k)-c&gt;(n+\delta+g_A)k\Rightarrow\dot k&gt;0\Rightarrow k\uparrow\quad\rightarrow$$</div>
+  <p>Consumption leaves enough resources not only to maintain capital, but also to accumulate additional capital.</p>
+  <p><strong>Above the blue curve,</strong> consumption is higher than the level compatible with maintaining $k$. Gross investment is insufficient:</p>
+  <div class="math-display">$$f(k)-c&lt;(n+\delta+g_A)k\Rightarrow\dot k&lt;0\Rightarrow k\downarrow\quad\leftarrow$$</div>
+  <p>Too much of current output is consumed to maintain capital per effective worker, so capital per effective worker declines.</p>
+  <div class="math-display">$$\begin{aligned}\text{Below blue: }&amp;\dot k&gt;0\Rightarrow k\uparrow\Rightarrow\rightarrow\\\text{On blue: }&amp;\dot k=0\Rightarrow k\text{ constant locally}\\\text{Above blue: }&amp;\dot k&lt;0\Rightarrow k\downarrow\Rightarrow\leftarrow\end{aligned}$$</div>
+  <p><strong>The blue curve tells us whether capital rises or falls. The red line tells us whether consumption rises or falls.</strong></p>
+ </div>
+ <div>
+  <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-phase-movements" onclick="toggle(this,'demo-phase-movements'); this.setAttribute('aria-expanded',this.classList.contains('open'))"><span class="arrow" aria-hidden="true">▼</span> Show the 4 movements</button>
+  <div class="collapsible" id="demo-phase-movements">
+   <h4>3 · Combine the two movements</h4>
+   <ol class="phase-sequence">
+    <li>Look left or right of the <strong class="red-text">red line</strong>: this tells you what happens to $c$.</li>
+    <li>Look above or below the <strong class="blue-text">blue curve</strong>: this tells you what happens to $k$.</li>
+    <li>Combine the vertical and horizontal arrows to find the direction of movement.</li>
+   </ol>
+   <div class="phase-table-wrap"><table class="comparison-table phase-table">
+    <thead><tr><th scope="col">Position</th><th scope="col">Movement</th><th scope="col">Economic explanation</th></tr></thead>
+    <tbody>
+     <tr><td>Left of red, above blue</td><td>$c\uparrow,\ k\downarrow$<br>$\boxed{\nwarrow}$</td><td>Capital is below $k^*$, so consumption rises; consumption exceeds the blue maintenance level, so capital falls.</td></tr>
+     <tr><td>Left of red, below blue</td><td>$c\uparrow,\ k\uparrow$<br>$\boxed{\nearrow}$</td><td>The high return makes consumption rise over time; consumption also leaves enough resources for capital accumulation.</td></tr>
+     <tr><td>Right of red, above blue</td><td>$c\downarrow,\ k\downarrow$<br>$\boxed{\swarrow}$</td><td>The low marginal return makes consumption fall over time; consumption is also too high to maintain capital.</td></tr>
+     <tr><td>Right of red, below blue</td><td>$c\downarrow,\ k\uparrow$<br>$\boxed{\searrow}$</td><td>Consumption falls because capital exceeds $k^*$, but is low enough relative to output for capital to accumulate.</td></tr>
+    </tbody>
+   </table></div>
+  </div>
+ </div>
+ <div class="phase-rule">
+  <h4>4 · Steady state and saddle path</h4>
+  <p>The red line gives $\dot c=0$; the blue curve gives $\dot k=0$. <strong>Only at their intersection are both variables constant.</strong> This is the Ramsey steady state:</p>
+  <div class="math-display">$$\boxed{\dot c=0\quad\text{and}\quad\dot k=0}\qquad\boxed{E=(k^*,c^*)}$$
+  $$c^*=f(k^*)-(n+\delta+g_A)k^*$$</div>
+  <p>The red line and blue curve are <strong>zero-change loci, not trajectories</strong>. The saddle path is the special optimal trajectory leading toward $E$. For an inherited initial capital stock $k(0)$, only one initial consumption choice places the economy on this path.</p>
+  <p>On its <strong>left branch</strong>, the economy moves up and right toward $E$; on its <strong>right branch</strong>, it moves down and left toward $E$. The four-region arrows help determine these directions, but do not give the path’s exact curvature. The optimal path must satisfy <strong>both dynamic equations and the transversality condition</strong>.</p>
+ </div>
+ <div class="key-note amber">
+  <h4>How to read the graph</h4>
+  <div class="math-display">$$\boxed{\begin{gathered}\text{RED = direction of }c\\\text{BLUE = direction of }k\end{gathered}}$$
+  $$\begin{aligned}\text{Left of red}&amp;\Rightarrow c\uparrow &amp;\text{Right of red}&amp;\Rightarrow c\downarrow\\\text{Below blue}&amp;\Rightarrow k\uparrow &amp;\text{Above blue}&amp;\Rightarrow k\downarrow\end{aligned}$$
+  $$\boxed{\begin{gathered}\text{lower current}\\\text{level of }c\\\neq\\\text{consumption decreasing}\\\text{over time}\end{gathered}}$$</div>
+  <p><strong>A level tells us where the economy is now; a derivative such as $\dot c$ or $\dot k$ tells us where it is moving next.</strong></p>
+ </div>
 </section>
 <section class="concept-card amber-top phase-section" id="ramsey-capital-shock">
  <div class="section-header"><span class="section-label">Case 1 · Capital shock</span><h3>Capital is divided by two: the steady state stays put</h3></div>

@@ -50,16 +50,17 @@
         <div class="idea-row"><span class="idea-index">2</span><p>Technology is neither a conventional good nor a public good. In this model, it is a nonrival and partially excludable input.</p></div>
         <div class="idea-row"><span class="idea-index">3</span><p>Because a nonrival good introduces nonconvexity, price-taking competition cannot support the equilibrium. The model therefore uses monopolistic competition.</p></div>
       </div>
-      <div class="takeaway"><h4>The main conclusions</h4><p>The stock of human capital determines the growth rate. In equilibrium, too little human capital is devoted to research. Integration into world markets raises growth rates, whereas a large population alone is not sufficient to generate growth.</p></div>
+      <div class="takeaway"><h4>The main conclusions announced by the model</h4><p><strong>Human capital determines the growth rate.</strong> The stock of human capital is therefore central to the long-run result.</p><p style="margin-top:8px;"><strong>Research is too small in equilibrium.</strong> The equilibrium allocation does not devote enough human capital to research.</p><p style="margin-top:8px;"><strong>Integration raises growth rates.</strong> This is one of the model’s stated conclusions about world markets.</p><p style="margin-top:8px;"><strong>Population alone is not enough.</strong> A large population does not by itself generate growth; the research mechanism remains essential.</p></div>
     </section>
 
     <section class="concept-card blue-top" id="building-blocks">
       <div class="section-header"><span class="section-label">Framework</span><h3>Building blocks of the model</h3></div>
       <p>This is a simplified version of the model: there are no capital goods, and the share of labour in the research sector is constant.</p>
-      <p>The economy contains three production sectors:</p>
-      <div class="sector-flow"><div class="sector-step"><strong>Final output sector</strong><span>uses intermediate goods and labor; output: final good; perfect competition</span></div><div class="flow-arrow">→</div><div class="sector-step"><strong>Intermediate good sector</strong><span>input: final good; output: intermediate goods; monopolistic competition</span></div><div class="flow-arrow">→</div><div class="sector-step"><strong>Research sector</strong><span>develops new variety of intermediate goods; uses labor; perfect competition</span></div></div>
-      <p>This is the model’s production chain. The final-good sector combines labour with intermediate inputs. The intermediate-good sector uses final goods to supply those inputs, and the research sector uses labour to create new varieties. Each sector has a distinct role before the model determines growth.</p>
-      <div class="definition-strip"><h4>Household sector</h4><p>There is one representative household. It maximises an intertemporal utility function, and labour has no disutility in that function.</p></div>
+      <p>The economy has three production sectors, and the distinction between them is essential. The <strong>final-good sector</strong> produces the final good under perfect competition. To do so, it combines labour with the intermediate goods that are already available. Its output is the good that can be consumed and that is also used as an input by the intermediate-good sector.</p>
+      <p>The <strong>intermediate-good sector</strong> transforms units of the final good into intermediate inputs. Each firm supplies one variety of intermediate good. This sector is under monopolistic competition, so its firms make profit-maximising quantity choices rather than taking all prices as given.</p>
+      <p>The <strong>research sector</strong> uses labour to create new varieties of intermediate goods. Its output is therefore not another quantity of an existing input: it increases the number of different inputs that the final-good sector can use. This is the channel through which R&amp;D enters the model.</p>
+      <div class="definition-strip"><h4>Household sector</h4><p>There is one representative household. It chooses consumption over time by maximising an intertemporal utility function. Labour has no disutility in this utility function, and there is no population growth.</p></div>
+      <p>These parts fit together in the following way. Research increases the number of available varieties; the final-good sector uses those varieties together with labour; and part of the final good is then required to produce the intermediate inputs themselves. The next sections introduce these links one at a time.</p>
     </section>
 
     <h2 class="course-part">Households and production</h2>
@@ -74,13 +75,15 @@
       <p>We consider a constant interest rate, $r(t)=r$. A time-varying rate could be considered, but the resolution of this model leads to a constant $r$.</p>
       <p>The transversality condition</p>
       <div class="math-display">$$\lim_{t\to\infty} S(t)e^{-rt}=0$$</div>
-      <div class="takeaway"><h4>On the optimal growth path</h4><div class="math-display boxed-amber">$$g_C=\frac{r-\rho}{\varepsilon}$$</div><p>The course states this consumption-growth result for the optimal path. With the constant interest rate used here, it relates consumption growth to $r$, the discount rate $\rho$, and $\varepsilon$.</p></div>
+      <p>This condition concerns discounted wealth over the infinite horizon used in the household programme. It is imposed together with the accumulation equation when the optimal path is considered.</p>
+      <div class="takeaway"><h4>On the optimal growth path</h4><div class="math-display boxed-amber">$$g_C=\frac{r-\rho}{\varepsilon}$$</div><p>The course states this result rather than deriving it here. It gives the growth rate of consumption on the optimal path. With the constant interest rate used in this model, consumption growth is determined by the interest rate $r$, the discount rate $\rho$, and $\varepsilon$.</p></div>
     </section>
 
     <section class="concept-card green-top" id="final-good">
       <div class="section-header"><span class="section-label">Final good sector</span><h3>Production function</h3></div>
       <div class="math-display boxed">$$Y_t=L_1^{1-\alpha}\int_0^{M_t}x_i^\alpha di$$</div>
-      <p>Here, $Y_t$ is value added in the final-good sector and $x_i$ is the quantity of intermediate input $i$ used by that sector.</p>
+      <p>This equation describes value added in the final-good sector. $Y_t$ is final-sector value added at date $t$. The labour contribution is written $L_1^{1-\alpha}$, while the contribution of intermediate inputs is collected in the integral.</p>
+      <p>For one variety $i$, $x_i$ is the quantity of that intermediate input used in final-good production. The term $x_i^\alpha$ is the contribution of that particular input within the integral.</p>
       <p>The index $i$ runs from $0$ to $M_t$. Thus, $M_t$ measures the variety of intermediate inputs: a higher $M_t$ means that more distinct intermediate goods are available.</p>
       <p>$L_1$ is the fixed quantity of labour employed in the final-good sector.</p>
       <p>The integral collects the contribution of every available intermediate input. Final-good production therefore combines the fixed labour input $L_1$ with the full set of varieties available at date $t$.</p>
@@ -89,14 +92,12 @@
     <section class="concept-card blue-top" id="intermediate-goods">
       <div class="section-header"><span class="section-label">Intermediate good sector</span><h3>Production and GDP</h3></div>
       <p>Producing one unit of an intermediate input requires one unit of the final good. The quantity used for variety $i$ is therefore also the final-good requirement associated with that variety.</p>
-      <div class="math-display">$$x_i=x_i$$</div>
       <p>$X_t$ is the total amount of final good required to produce all intermediate goods.</p>
       <div class="math-display">$$X_t=\int_0^{M_t}x_i\,di$$</div>
       <p>This integral adds the quantity used to produce every intermediate input. It is the total amount of final good absorbed by intermediate-good production.</p>
       <p>GDP</p>
       <div class="math-display boxed-blue">$$GDP_t=Y_t-X_t$$</div>
       <p>The final-good sector produces $Y_t$, but intermediate-good production uses $X_t$ units of that final good. GDP is therefore final-sector value added minus the final goods required to make the intermediate inputs.</p>
-      <p>and (because there is no capital good, so no investment)</p>
       <div class="math-display">$$C_t=GDP_t$$</div>
       <p>There are no capital goods in this simplified model, so there is no investment term. The whole of GDP is therefore consumed: $C_t=GDP_t$. It follows that consumption and output have the same growth rate, $g_C=g_Y$.</p>
       <p>and</p>
@@ -105,7 +106,7 @@
 
     <section class="concept-card amber-top" id="prices-wages">
       <div class="section-header"><span class="section-label">Perfect competition</span><h3>Price of intermediate input and wages</h3></div>
-      <p>Perfect competition in the final good sector ⇒ prices of labor and intermediate input are equal to their marginal productivity.</p>
+      <p>The final-good sector is perfectly competitive. The course therefore prices both labour and each intermediate input according to its marginal productivity: the additional final-good output associated with that input.</p>
       <div class="math-display">$$p_i=L_1^{1-\alpha}\alpha x_i^{\alpha-1}$$</div>
       <p>For intermediate input $i$, this marginal-productivity rule gives the price $p_i$. The final good is the numeraire, so its price is 1 and $p_i$ is expressed in units of the final good.</p>
       <div class="math-display">$$w_t=(1-\alpha)L_1^{-\alpha}\int_0^{M_t}x_i^\alpha di$$</div>
@@ -115,10 +116,10 @@
     <h2 class="course-part">Intermediate goods and variety</h2>
     <section class="concept-card purple-top" id="profit-maximisation">
       <div class="section-header"><span class="section-label">Monopolistic competition</span><h3>Profit maximisation in the intermediate good sector</h3></div>
-      <p>Monopolistic competition ⇒ each firm chooses the quantity $x_i$ that, at the given price $p_i$, maximises its profit</p>
+      <p>Under monopolistic competition, each intermediate-good firm chooses the quantity $x_i$ that maximises its profit, taking the price $p_i$ as given in this calculation.</p>
       <div class="math-display">$$\Pi_i=p_ix_i-x_i=\alpha L_1^{1-\alpha}x_i^\alpha-x_i$$</div>
       <p>Profit is revenue, $p_ix_i$, minus the final good required to produce the intermediate input, $x_i$. The second expression is obtained by substituting the price $p_i$ derived in the final-good sector into the profit equation.</p>
-      <p>Profit maximisation with respect to $x_i$ leads to</p>
+      <p>Maximising this expression with respect to $x_i$ gives the quantity chosen by every intermediate-good firm:</p>
       <div class="math-display boxed-purple">$$x_i=L_1\alpha^{2/(1-\alpha)}$$</div>
       <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="profit-derivation" onclick="toggle(this,'profit-derivation')"><span class="arrow">▼</span><span class="toggle-label">Show derivation</span></button>
       <div class="collapsible" id="profit-derivation"><div class="derivation-step"><strong>1 · Substitute the price equation</strong><p>From $p_i=L_1^{1-\alpha}\alpha x_i^{\alpha-1}$, revenue is $p_ix_i=\alpha L_1^{1-\alpha}x_i^\alpha$. Therefore $\Pi_i=\alpha L_1^{1-\alpha}x_i^\alpha-x_i$.</p></div><div class="derivation-step"><strong>2 · Maximise with respect to $x_i$</strong><div class="math-display">$$\frac{d\Pi_i}{dx_i}=\alpha^2L_1^{1-\alpha}x_i^{\alpha-1}-1=0$$</div><p>The first-order condition sets the marginal change in profit equal to zero.</p></div><div class="derivation-step"><strong>3 · Isolate $x_i$</strong><div class="math-display">$$\alpha^2L_1^{1-\alpha}x_i^{\alpha-1}=1\quad\Longleftrightarrow\quad x_i^{1-\alpha}=\alpha^2L_1^{1-\alpha}$$</div><div class="math-display">$$x_i=L_1\alpha^{2/(1-\alpha)}$$</div></div></div>
@@ -134,7 +135,7 @@
       <p>For a given value of $X_t$, $Y_t$ is an increasing function of $M_t$.</p>
       <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="variety-derivation" onclick="toggle(this,'variety-derivation')"><span class="arrow">▼</span><span class="toggle-label">Show derivation</span></button>
       <div class="collapsible" id="variety-derivation"><div class="derivation-step"><strong>1 · Integrate the common quantity</strong><div class="math-display">$$Y_t=L_1^{1-\alpha}M_t\left(\frac{X_t}{M_t}\right)^\alpha=L_1^{1-\alpha}M_t^{1-\alpha}X_t^\alpha$$</div></div><div class="derivation-step"><strong>2 · Use $X_t=M_tx$</strong><div class="math-display">$$Y_t=M_t^{1-\alpha}L_1^{1-\alpha}(M_tx)^\alpha=M_tL_1^{1-\alpha}x^\alpha$$</div></div><div class="derivation-step"><strong>3 · Obtain GDP</strong><p>Because total intermediate-good production is $X_t=M_tx$, subtracting it from $Y_t$ gives:</p><div class="math-display">$$GDP_t=M_t\left(L_1^{1-\alpha}x^\alpha-x\right)$$</div></div></div>
-      <div class="reading-block"><p>The common factor $M_t$ appears in both output and GDP. Since $C_t=GDP_t$, the professor’s conclusion is that $Y$, $GDP$, and $C$ grow at the same rate as the measure of intermediate-good variety $M_t$.</p></div>
+      <div class="reading-block"><p>The common factor $M_t$ appears in both output and GDP. Since $C_t=GDP_t$, the result is that $Y_t$, $GDP_t$, and $C_t$ grow at the same rate as the measure of intermediate-good variety, $M_t$.</p></div>
       <div class="takeaway"><h4>Growth and variety</h4><p>$Y_t$, $GDP_t$, and $C_t$ all grow at the same rate as the measure of intermediate-good variety, $M_t$.</p></div>
     </section>
 
@@ -171,7 +172,7 @@
       <div class="math-display">$$x=L_1\alpha^{2/(1-\alpha)}$$</div>
       <p>Because all intermediate inputs have the same quantity $x$, the wage integral contains the same term across $M_t$ varieties. Substituting $x=L_1\alpha^{2/(1-\alpha)}$ gives</p>
       <div class="math-display">$$w_t=(1-\alpha)\alpha^{2\alpha/(1-\alpha)}M_t$$</div>
-      <p>Substituting this wage and the profit flow $\Pi$ into the research-arbitrage condition makes the common terms cancel. Hence</p>
+      <p>Substituting this wage and the profit flow $\Pi$ into the research-arbitrage condition cancels the common terms and gives</p>
       <div class="math-display boxed-amber">$$r=\lambda M_t\Pi/w_t=\alpha\lambda L_1$$</div>
       <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="interest-derivation" onclick="toggle(this,'interest-derivation')"><span class="arrow">▼</span><span class="toggle-label">Show derivation</span></button>
       <div class="collapsible" id="interest-derivation"><div class="derivation-step"><strong>1 · Substitute the common intermediate quantity into the wage</strong><div class="math-display">$$w_t=(1-\alpha)L_1^{-\alpha}M_tx^\alpha$$</div><div class="math-display">$$w_t=(1-\alpha)L_1^{-\alpha}M_t\left(L_1\alpha^{2/(1-\alpha)}\right)^\alpha=(1-\alpha)\alpha^{2\alpha/(1-\alpha)}M_t$$</div></div><div class="derivation-step"><strong>2 · Substitute profit and wage into the arbitrage condition</strong><div class="math-display">$$r=\lambda M_t\frac{\frac{1-\alpha}{\alpha}L_1\alpha^{2/(1-\alpha)}}{(1-\alpha)\alpha^{2\alpha/(1-\alpha)}M_t}$$</div><p>The factors $M_t$ and $1-\alpha$ cancel. Combining the remaining powers of $\alpha$ gives:</p><div class="math-display">$$r=\alpha\lambda L_1$$</div></div></div>
@@ -179,13 +180,13 @@
 
     <section class="concept-card green-top" id="growth-rate">
       <div class="section-header"><span class="section-label">Growth rate</span><h3>The growth rate of the economy</h3></div>
-      <p>Up to now, the course has obtained one expression for growth from research, one for consumption growth, and one for the interest rate. They are combined because GDP and consumption grow at the same rate in this model.</p>
+      <p>The course has now obtained one expression for growth from research, one for consumption growth, and one for the interest rate. These results must be combined because GDP and consumption grow at the same rate in this model.</p>
       <div class="result-row"><strong>GDP grows at the same rate as $M_t$</strong><div class="math-display">$$g=\lambda L_2$$</div><p>Since growth in varieties is $\lambda M_tL_2$, the growth rate of the variety stock is $\lambda L_2$. Output, GDP, and consumption grow at this same rate.</p></div>
       <div class="result-row"><strong>The growth rate of consumption is</strong><div class="math-display">$$g_C=\frac{r-\rho}{\varepsilon}$$</div><p>This is the optimal consumption-growth result from the household sector.</p></div>
       <div class="result-row"><strong>The interest rate is</strong><div class="math-display">$$r=\lambda M_t\Pi/w_t=\alpha\lambda L_1$$</div><p>This is the research-arbitrage result after substituting the wage and profit expressions.</p></div>
       <p>Using labour-market equilibrium,</p>
       <div class="math-display">$$L_1+L_2=L$$</div>
-      <p>These relationships determine how total labour is divided between final-good production and research. Combining them leads to</p>
+      <p>These relationships determine how total labour is divided between final-good production and research. Combining them gives</p>
       <div class="math-display boxed">$$\boxed{g=\frac{\alpha\lambda L-\rho}{\alpha+\varepsilon}}$$</div>
       <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="growth-derivation" onclick="toggle(this,'growth-derivation')"><span class="arrow">▼</span><span class="toggle-label">Show derivation</span></button>
       <div class="collapsible" id="growth-derivation"><div class="derivation-step"><strong>1 · Equate GDP and consumption growth</strong><div class="math-display">$$g=g_C=\frac{\alpha\lambda L_1-\rho}{\varepsilon}$$</div></div><div class="derivation-step"><strong>2 · Use research growth and labour-market equilibrium</strong><div class="math-display">$$g=\lambda L_2\quad\Longleftrightarrow\quad L_2=\frac{g}{\lambda}$$</div><div class="math-display">$$L_1=L-L_2=L-\frac{g}{\lambda}$$</div></div><div class="derivation-step"><strong>3 · Substitute $L_1$</strong><div class="math-display">$$g=\frac{\alpha\lambda\left(L-\frac{g}{\lambda}\right)-\rho}{\varepsilon}$$</div><div class="math-display">$$\varepsilon g=\alpha\lambda L-\alpha g-\rho\quad\Longleftrightarrow\quad (\alpha+\varepsilon)g=\alpha\lambda L-\rho$$</div><div class="math-display">$$g=\frac{\alpha\lambda L-\rho}{\alpha+\varepsilon}$$</div></div></div>

@@ -38,6 +38,12 @@
 :focus-visible{outline:2px solid var(--green-bright);outline-offset:4px}
 @media(max-width:1200px){.topbar{gap:12px}.chapter-progress-bar{margin:0 6px;gap:4px}}
 @media(max-width:640px){.topbar{gap:8px}.topbar-breadcrumb{font-size:.8rem;max-width:none;flex:1}.topbar-pill{padding:5px 8px;font-size:.7rem;gap:5px}.topbar-breadcrumb .brand-short,.topbar-breadcrumb .sep{display:none}.chapter-progress-bar{flex:0 1 35%;margin:0;gap:3px}.progress-segment{height:5px}.graph-placeholder{height:145px}}
+.collapsible .derivation-step:first-child{padding-top:0}
+.collapsible .math-display{margin:12px 0;font-size:.93rem}
+.result-row>.toggle-btn{margin-top:12px}
+.toggle-btn{text-align:left;max-width:100%;line-height:1.45}
+.toggle-btn .arrow{flex-shrink:0}
+@media(prefers-reduced-motion:reduce){.progress-segment,.toggle-btn .arrow{transition:none}}
 </style>
 </head>
 <body>
@@ -93,12 +99,15 @@
       <p>The term $r(t)S(t)$ is interest income, and $w(t)L(t)$ is labour income. Both add to wealth, while current consumption $c(t)$ reduces it. The left-hand side is the change in wealth over time.</p>
       <div class="reading-block"><h4>The transversality condition used in the course</h4><p>With a constant interest rate, the condition is written in terms of discounted wealth. It requires this discounted amount to approach zero as the horizon becomes arbitrarily distant:</p><div class="math-display">$$\lim_{t\to\infty}S(t)e^{-rt}=0$$</div></div>
       <div class="formula-story"><span class="formula-caption">Optimal consumption growth</span><div class="math-display boxed">$$g_C=\frac{r-\rho}{\varepsilon}$$</div></div>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-consumption" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: optimal consumption growth</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-consumption"><p>Consumption $c(t)$ is the choice variable; wealth $S(t)$ is the state variable. The multiplier $q(t)$ is the shadow value of wealth. A dot denotes a time derivative; time arguments are omitted below.</p><div class="derivation-step"><strong>1 · Current-value Hamiltonian</strong><div class="math-display">$$\mathcal H=\frac{c^{1-\varepsilon}-1}{1-\varepsilon}+q\,[rS+wL-c]$$</div></div><div class="derivation-step"><strong>2 · Consumption choice and wealth equation</strong><div class="math-display">$$\frac{\partial\mathcal H}{\partial c}=c^{-\varepsilon}-q=0\quad\Rightarrow\quad q=c^{-\varepsilon}$$</div><div class="math-display">$$\dot q=\rho q-\frac{\partial\mathcal H}{\partial S}=\rho q-rq$$</div><div class="math-display">$$\frac{\dot q}{q}=\rho-r$$</div></div><div class="derivation-step"><strong>3 · Differentiate the consumption condition</strong><div class="math-display">$$\dot q=-\varepsilon c^{-\varepsilon-1}\dot c$$</div><div class="math-display">$$\frac{\dot q}{q}=\frac{-\varepsilon c^{-\varepsilon-1}\dot c}{c^{-\varepsilon}}=-\varepsilon\frac{\dot c}{c}$$</div></div><div class="derivation-step"><strong>4 · Combine the conditions</strong><div class="math-display">$$-\varepsilon\frac{\dot c}{c}=\rho-r$$</div><div class="math-display">$$\boxed{g_C\equiv\frac{\dot c}{c}=\frac{r-\rho}{\varepsilon}}$$</div></div></div>
+
       <p>This result gives the growth rate of consumption on the optimal path. It relates the return from saving, $r$, to the household’s impatience, $\rho$. The parameter $\varepsilon$ determines how their difference translates into consumption growth.</p>
     </section>
 
     <section class="concept-card blue-top" id="final-good-production">
       <div class="section-header"><span class="section-label">Final good</span><h3>The production function</h3></div>
-      <p>The final-good sector combines labour with the current intermediate input. Its production function is:</p>
+      <p>The final-good sector combines labour with the current intermediate input. The model assumes the following production function, with $0<\alpha<1$:</p>
       <div class="math-display boxed-blue">$$Y_t=(A_tL)^{1-\alpha}x_t^\alpha$$</div>
       <div class="reading-grid">
         <div class="reading-tile"><h4>Output and the intermediate input</h4><p>$Y_t$ is output in the final-good sector at date $t$, and $x_t$ is the quantity of the intermediate good used in that production.</p></div>
@@ -109,7 +118,7 @@
 
     <section class="concept-card amber-top" id="intermediate-production-gdp">
       <div class="section-header"><span class="section-label">Accounting</span><h3>Intermediate-good production and GDP</h3></div>
-      <p>Producing one unit of the intermediate good requires one unit of the final good. Producing $x_t$ units of the input therefore uses $x_t$ units of final output. This is the one-for-one production requirement written as $x=x$ in the support.</p>
+      <p>Producing one unit of the intermediate good requires one unit of the final good. Producing $x_t$ units of the input therefore uses $x_t$ units of final output. This one-for-one requirement is an assumption about the production technology.</p>
       <p>The final good used to make intermediate inputs must be deducted from final-sector output when calculating GDP. Let $X_t$ denote this use of the final good; with one intermediate input, $X_t=x_t$.</p>
       <div class="math-display boxed-amber">$$GDP_t=Y_t-X_t$$</div>
       <p>The remaining resources have two uses: household consumption, $C_t$, and research expenditure, $R_t$.</p>
@@ -120,27 +129,45 @@
     <section class="concept-card blue-top" id="prices-wages">
       <div class="section-header"><span class="section-label">Perfect competition</span><h3>The price of the intermediate input and wages</h3></div>
       <p>Under perfect competition in the final-good sector, each input is paid its marginal productivity: the extra final output obtained from an additional unit of that input, holding the other inputs fixed.</p>
-      <div class="result-row"><strong>The intermediate-input price</strong><div class="math-display boxed-blue">$$p_t=\alpha(A_tL)^{1-\alpha}x_t^{\alpha-1}$$</div><p>The price $p_t$ equals the marginal productivity of the intermediate input. The final good’s price is normalised to 1, so $p_t$ is measured in units of the final good.</p></div>
-      <div class="result-row"><strong>The wage</strong><div class="math-display boxed">$$w_t=(1-\alpha)L^{-\alpha}A_t^{1-\alpha}x_t^\alpha$$</div><p>The wage $w_t$ equals the marginal productivity of labour in final-good production. It measures the payment for one unit of labour, again in units of the final good.</p></div>
+      <div class="result-row"><strong>The intermediate-input price</strong><div class="math-display boxed-blue">$$p_t=\alpha(A_tL)^{1-\alpha}x_t^{\alpha-1}$$</div><p>The price $p_t$ equals the marginal productivity of the intermediate input. The final good’s price is normalised to 1, so $p_t$ is measured in units of the final good.</p>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-price" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: the intermediate-input price</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-price"><p>Hold $A_t$ and $L$ fixed when differentiating.</p><div class="derivation-step"><strong>1 · Competitive input demand</strong><div class="math-display">$$p_t=\frac{\partial Y_t}{\partial x_t}$$</div><div class="math-display">$$Y_t=(A_tL)^{1-\alpha}x_t^\alpha$$</div></div><div class="derivation-step"><strong>2 · Differentiate with respect to the input</strong><div class="math-display">$$\frac{\partial Y_t}{\partial x_t}=(A_tL)^{1-\alpha}\,\alpha x_t^{\alpha-1}$$</div><div class="math-display">$$\boxed{p_t=\alpha(A_tL)^{1-\alpha}x_t^{\alpha-1}}$$</div></div></div>
+</div>
+      <div class="result-row"><strong>The wage</strong><div class="math-display boxed">$$w_t=(1-\alpha)L^{-\alpha}A_t^{1-\alpha}x_t^\alpha$$</div><p>The wage $w_t$ equals the marginal productivity of labour in final-good production. It measures the payment for one unit of labour, again in units of the final good.</p>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-wage" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: the wage</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-wage"><p>Hold technology $A_t$ and the intermediate input $x_t$ fixed.</p><div class="derivation-step"><strong>1 · Competitive labour demand</strong><div class="math-display">$$w_t=\frac{\partial Y_t}{\partial L}$$</div><div class="math-display">$$Y_t=A_t^{1-\alpha}L^{1-\alpha}x_t^\alpha$$</div></div><div class="derivation-step"><strong>2 · Differentiate with respect to labour</strong><div class="math-display">$$\frac{\partial Y_t}{\partial L}=A_t^{1-\alpha}(1-\alpha)L^{-\alpha}x_t^\alpha$$</div><div class="math-display">$$\boxed{w_t=(1-\alpha)L^{-\alpha}A_t^{1-\alpha}x_t^\alpha}$$</div></div></div>
+</div>
     </section>
 
     <section class="concept-card green-top" id="intermediate-profit">
       <div class="section-header"><span class="section-label">Monopoly profit</span><h3>Profit maximisation in the intermediate-good sector</h3></div>
       <p>The intermediate-good producer chooses its quantity $x_t$ to maximise profit. Its revenue is $p_tx_t$, while its production cost is $x_t$, because each unit requires one unit of the final good.</p>
       <div class="math-display">$$\Pi_t=p_tx_t-x_t=\alpha(A_tL)^{1-\alpha}x_t^\alpha-x_t$$</div>
-      <p>The second expression substitutes the price equation into revenue: multiplying $x_t^{\alpha-1}$ by $x_t$ gives $x_t^\alpha$. The producer faces the price–quantity relationship from the final-good sector. Although final-good firms take prices as given, the monopolist accounts for this relationship when choosing its quantity.</p>
+      <p>The producer faces the demand relationship from the final-good sector: the price it can charge depends on the quantity it supplies. It takes this relationship into account when maximising profit.</p>
       <div class="formula-story"><span class="formula-caption">Profit-maximising quantity</span><div class="math-display boxed">$$x_t=A_tL\alpha^{\frac{2}{1-\alpha}}$$</div></div>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-quantity" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: the profit-maximising quantity</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-quantity"><p>Choose $x_t>0$, holding $A_t$ and $L$ fixed, with $0<\alpha<1$.</p><div class="derivation-step"><strong>1 · Substitute demand into profit</strong><div class="math-display">$$\Pi_t=p_t(x_t)x_t-x_t$$</div><div class="math-display">$$\Pi_t=\left[\alpha(A_tL)^{1-\alpha}x_t^{\alpha-1}\right]x_t-x_t$$</div><div class="math-display">$$\Pi_t=\alpha(A_tL)^{1-\alpha}x_t^\alpha-x_t$$</div></div><div class="derivation-step"><strong>2 · First-order condition</strong><div class="math-display">$$\frac{\partial\Pi_t}{\partial x_t}=\alpha^2(A_tL)^{1-\alpha}x_t^{\alpha-1}-1=0$$</div></div><div class="derivation-step"><strong>3 · Isolate the quantity</strong><div class="math-display">$$\alpha^2(A_tL)^{1-\alpha}x_t^{\alpha-1}=1$$</div><div class="math-display">$$\frac{\alpha^2(A_tL)^{1-\alpha}}{x_t^{1-\alpha}}=1$$</div><div class="math-display">$$x_t^{1-\alpha}=\alpha^2(A_tL)^{1-\alpha}$$</div><div class="math-display">$$x_t=\left[\alpha^2(A_tL)^{1-\alpha}\right]^{\frac{1}{1-\alpha}}$$</div><div class="math-display">$$\boxed{x_t=A_tL\alpha^{\frac{2}{1-\alpha}}}$$</div></div><div class="derivation-step"><strong>4 · Check that profit is maximised</strong><div class="math-display">$$\frac{\partial^2\Pi_t}{\partial x_t^2}=\alpha^2(A_tL)^{1-\alpha}(\alpha-1)x_t^{\alpha-2}<0$$</div></div></div>
+
       <p>This is the quantity selected by the intermediate-good producer. For a given production parameter $\alpha$, its scale depends on the technology level $A_t$ and the size of the labour force $L$.</p>
       <div class="math-display boxed-blue">$$\Pi_t=\pi A_tL$$</div>
       <div class="math-display">$$\pi=(1-\alpha)\alpha^{\frac{1+\alpha}{1-\alpha}}$$</div>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-profit" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: monopoly profit and the coefficient π</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-profit"><div class="derivation-step"><strong>1 · Evaluate profit at the chosen quantity</strong><div class="math-display">$$\Pi_t=\alpha(A_tL)^{1-\alpha}\left[A_tL\alpha^{\frac{2}{1-\alpha}}\right]^\alpha-A_tL\alpha^{\frac{2}{1-\alpha}}$$</div><div class="math-display">$$\Pi_t=A_tL\left[\alpha^{1+\frac{2\alpha}{1-\alpha}}-\alpha^{\frac{2}{1-\alpha}}\right]$$</div></div><div class="derivation-step"><strong>2 · Rewrite the exponents</strong><div class="math-display">$$1+\frac{2\alpha}{1-\alpha}=\frac{1+\alpha}{1-\alpha}$$</div><div class="math-display">$$\frac{2}{1-\alpha}=\frac{1+\alpha}{1-\alpha}+1$$</div></div><div class="derivation-step"><strong>3 · Factor the common term</strong><div class="math-display">$$\Pi_t=A_tL\left[\alpha^{\frac{1+\alpha}{1-\alpha}}-\alpha\,\alpha^{\frac{1+\alpha}{1-\alpha}}\right]$$</div><div class="math-display">$$\Pi_t=A_tL(1-\alpha)\alpha^{\frac{1+\alpha}{1-\alpha}}$$</div><div class="math-display">$$\boxed{\Pi_t=\pi A_tL},\qquad\pi\equiv(1-\alpha)\alpha^{\frac{1+\alpha}{1-\alpha}}$$</div></div></div>
+
       <p>The capital letter $\Pi_t$ denotes the producer’s profit at date $t$. The lower-case $\pi$ is a coefficient determined by $\alpha$; it summarises the constant part of the profit expression. Writing profit as $\pi A_tL$ makes the roles of technology and market size easier to read.</p>
     </section>
 
     <section class="concept-card amber-top" id="output-gdp">
       <div class="section-header"><span class="section-label">Production</span><h3>Final-good output and GDP</h3></div>
       <p>With the intermediate-good producer choosing the quantity stated above, final-sector output and GDP take the following forms:</p>
-      <div class="result-row"><strong>Final-good output</strong><div class="math-display boxed">$$Y_t=\alpha^{\frac{2\alpha}{1-\alpha}}A_tL$$</div></div>
-      <div class="result-row"><strong>GDP after deducting intermediate production</strong><div class="math-display boxed-amber">$$GDP_t=\alpha^{\frac{2\alpha}{1-\alpha}}(1-\alpha^2)A_tL$$</div></div>
+      <div class="result-row"><strong>Final-good output</strong><div class="math-display boxed">$$Y_t=\alpha^{\frac{2\alpha}{1-\alpha}}A_tL$$</div>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-output" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: final-good output</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-output"><div class="derivation-step"><strong>1 · Substitute the optimal intermediate quantity</strong><div class="math-display">$$Y_t=(A_tL)^{1-\alpha}x_t^\alpha$$</div><div class="math-display">$$Y_t=(A_tL)^{1-\alpha}\left[A_tL\alpha^{\frac{2}{1-\alpha}}\right]^\alpha$$</div></div><div class="derivation-step"><strong>2 · Collect the powers</strong><div class="math-display">$$Y_t=(A_tL)^{1-\alpha}(A_tL)^\alpha\alpha^{\frac{2\alpha}{1-\alpha}}$$</div><div class="math-display">$$Y_t=(A_tL)^{1-\alpha+\alpha}\alpha^{\frac{2\alpha}{1-\alpha}}$$</div><div class="math-display">$$\boxed{Y_t=\alpha^{\frac{2\alpha}{1-\alpha}}A_tL}$$</div></div></div>
+</div>
+      <div class="result-row"><strong>GDP after deducting intermediate production</strong><div class="math-display boxed-amber">$$GDP_t=\alpha^{\frac{2\alpha}{1-\alpha}}(1-\alpha^2)A_tL$$</div>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-gdp" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: GDP</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-gdp"><div class="derivation-step"><strong>1 · Deduct the cost of intermediate production</strong><div class="math-display">$$GDP_t=Y_t-X_t,\qquad X_t=x_t$$</div><div class="math-display">$$GDP_t=A_tL\left[\alpha^{\frac{2\alpha}{1-\alpha}}-\alpha^{\frac{2}{1-\alpha}}\right]$$</div></div><div class="derivation-step"><strong>2 · Extract the common power of α</strong><div class="math-display">$$\frac{2}{1-\alpha}-\frac{2\alpha}{1-\alpha}=2$$</div><div class="math-display">$$\alpha^{\frac{2}{1-\alpha}}=\alpha^{\frac{2\alpha}{1-\alpha}}\alpha^2$$</div></div><div class="derivation-step"><strong>3 · Factor</strong><div class="math-display">$$GDP_t=A_tL\alpha^{\frac{2\alpha}{1-\alpha}}(1-\alpha^2)$$</div><div class="math-display">$$\boxed{GDP_t=\alpha^{\frac{2\alpha}{1-\alpha}}(1-\alpha^2)A_tL}$$</div></div></div>
+</div>
       <p>The two expressions retain the distinction between total final-sector output and GDP. The factor $1-\alpha^2$ in the GDP formula reflects the deduction of the final good used to produce the intermediate input. In both expressions, the changing technology level enters through $A_t$.</p>
     </section>
 
@@ -153,8 +180,8 @@
         <div class="reading-tile"><h4>If research succeeds</h4><div class="math-display boxed">$$A_t=\gamma A_{t-1},\qquad \gamma>1$$</div><p>The new technology is $\gamma$ times the previous level. The parameter $\gamma$ describes the size of the technological improvement.</p></div>
         <div class="reading-tile"><h4>If research fails</h4><div class="math-display">$$A_t=A_{t-1}$$</div><p>No new technology is introduced, so the economy continues with its previous technology level.</p></div>
       </div>
-      <p>The probability of success, $\mu_t$, depends on research expenditure $R_t$ relative to the technology level being targeted:</p>
-      <div class="math-display boxed-purple">$$\mu_t=\lambda\left(\frac{R_t}{\gamma A_{t-1}}\right)^\sigma,\qquad \sigma<1$$</div>
+      <p>The model assumes the following research technology: the probability of success, $\mu_t$, depends on research expenditure $R_t$ relative to the technology level being targeted:</p>
+      <div class="math-display boxed-purple">$$\mu_t=\lambda\left(\frac{R_t}{\gamma A_{t-1}}\right)^\sigma,\qquad 0<\sigma<1$$</div>
       <p>The parameter $\lambda$ represents research efficiency. The ratio $R_t/(\gamma A_{t-1})$ measures research expenditure relative to the technology level that a successful innovation would achieve. The exponent $\sigma$ describes the response of success to this research effort; the course assumes a diminishing response.</p>
       <p>More current research raises the probability of success. For a given research expenditure, a higher inherited technology level $A_{t-1}$ reduces the ratio in the formula and therefore makes further progress harder to achieve.</p>
     </section>
@@ -163,19 +190,28 @@
       <div class="section-header"><span class="section-label">Research incentives</span><h3>The researcher’s expected profit</h3></div>
       <p>A researcher who succeeds introduces the new intermediate good and becomes its producer. This is the reward for successful research: access to the profit associated with the new technology.</p>
       <div class="reading-block"><h4>The allocation rule in this simplified model</h4><p>If research fails, production of the previous period’s intermediate good is randomly allocated to another producer, who is not necessarily the previous producer. This is the specific rule used in the version of the model presented here.</p></div>
-      <p>Let $\Pi_t^*$ denote the profit obtained if the researcher succeeds. The researcher’s expected profit is:</p>
-      <div class="math-display boxed-purple">$$\mu_t\Pi_t^*-R_t=\lambda\left(\frac{R_t}{\gamma A_{t-1}}\right)^\sigma\Pi_t^*-R_t$$</div>
-      <p>The product $\mu_t\Pi_t^*$ weights the successful outcome’s profit by its probability. Research expenditure $R_t$ is then subtracted because it must be paid whether research succeeds or fails. The expression captures the researcher’s choice between a costly research effort and an uncertain reward.</p>
+      <p>A successful researcher earns $\Pi_t^*$, the monopoly profit at the improved technology level:</p>
+      <div class="math-display boxed">$$\Pi_t^*=\pi(\gamma A_{t-1})L$$</div><p>Research must be paid for even when no innovation is produced. The researcher maximises expected profit:</p><div class="math-display boxed-purple">$$\mu_t\Pi_t^*-R_t=\lambda\left(\frac{R_t}{\gamma A_{t-1}}\right)^\sigma\Pi_t^*-R_t$$</div>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-research-payoff" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: expected research profit</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-research-payoff"><div class="derivation-step"><strong>1 · The reward conditional on success</strong><div class="math-display">$$\Pi_t=\pi A_tL,\qquad A_t=\gamma A_{t-1}\ \text{if successful}$$</div><div class="math-display">$$\Pi_t^*=\pi\gamma A_{t-1}L$$</div></div><div class="derivation-step"><strong>2 · Weight the two outcomes</strong><div class="math-display">$$\mathbb E[\text{research profit}]=\mu_t(\Pi_t^*-R_t)+(1-\mu_t)(-R_t)$$</div><div class="math-display">$$=\mu_t\Pi_t^*-\underbrace{[\mu_t+(1-\mu_t)]}_{1}R_t$$</div><div class="math-display">$$=\lambda\left(\frac{R_t}{\gamma A_{t-1}}\right)^\sigma\pi\gamma A_{t-1}L-R_t$$</div></div></div>
+
+      <p>The researcher trades off a certain expenditure against an uncertain monopoly reward. Spending more improves the chance of success, but also increases the cost of the research attempt.</p>
     </section>
 
     <section class="concept-card blue-top" id="optimal-research">
       <div class="section-header"><span class="section-label">Research choice</span><h3>Optimal spending and the probability of success</h3></div>
       <p>Maximising the expected-profit expression gives the following optimal research expenditure, expressed relative to the technology level targeted by innovation:</p>
       <div class="math-display boxed">$$\frac{R_t}{\gamma A_{t-1}}=(\sigma\lambda\pi L)^{\frac{1}{1-\sigma}}$$</div>
-      <p>The left-hand side is the research ratio used in the success-probability equation. The right-hand side combines the research parameters $\sigma$ and $\lambda$ with the profit coefficient $\pi$ and the labour force $L$. This result connects the research decision to the profit available from supplying the intermediate good.</p>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-research-spending" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: optimal research expenditure</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-research-spending"><p>Hold $A_{t-1}$, $\gamma$, $L$ and the research parameters fixed. The calculation uses $0<\sigma<1$ and positive $\lambda$, $L$, $A_{t-1}$. This is the interior solution used in the course; its implied success probability must be below 1.</p><div class="derivation-step"><strong>1 · Express the choice as research intensity</strong><div class="math-display">$$z\equiv\frac{R_t}{\gamma A_{t-1}},\qquad R_t=\gamma A_{t-1}z$$</div><div class="math-display">$$F(z)\equiv\mathbb E[\text{research profit}]$$</div><div class="math-display">$$F(z)=\lambda z^\sigma\pi\gamma A_{t-1}L-\gamma A_{t-1}z$$</div><div class="math-display">$$F(z)=\gamma A_{t-1}\left[\lambda\pi Lz^\sigma-z\right]$$</div></div><div class="derivation-step"><strong>2 · First-order condition</strong><div class="math-display">$$F'(z)=\gamma A_{t-1}\left[\sigma\lambda\pi Lz^{\sigma-1}-1\right]=0$$</div><div class="math-display">$$\sigma\lambda\pi Lz^{\sigma-1}=1$$</div></div><div class="derivation-step"><strong>3 · Solve for research intensity</strong><div class="math-display">$$\frac{\sigma\lambda\pi L}{z^{1-\sigma}}=1$$</div><div class="math-display">$$z^{1-\sigma}=\sigma\lambda\pi L$$</div><div class="math-display">$$z=(\sigma\lambda\pi L)^{\frac{1}{1-\sigma}}$$</div><div class="math-display">$$\boxed{\frac{R_t}{\gamma A_{t-1}}=(\sigma\lambda\pi L)^{\frac{1}{1-\sigma}}}$$</div></div><div class="derivation-step"><strong>4 · Check the maximum</strong><div class="math-display">$$F''(z)=\gamma A_{t-1}\sigma\lambda\pi L(\sigma-1)z^{\sigma-2}<0$$</div></div></div>
+
+      <p>Research effort responds to the reward available from innovation: the profit coefficient $\pi$ and market size $L$ enter the researcher’s spending decision alongside research efficiency $\lambda$.</p>
       <p>At this research choice, the probability of success is:</p>
       <div class="math-display boxed-blue">$$\mu=\lambda^{\frac{1}{1-\sigma}}(\sigma\pi L)^{\frac{\sigma}{1-\sigma}}$$</div>
-      <p>The course writes this probability as $\mu$, without a time subscript: with the parameters and $L$ fixed, the expression is the same in each period. It is the probability that research produces a new technology, rather than the size of that technology’s improvement.</p>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-success-probability" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: the probability of success</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-success-probability"><div class="derivation-step"><strong>1 · Insert optimal research intensity</strong><div class="math-display">$$\mu=\lambda z^\sigma,\qquad z=(\sigma\lambda\pi L)^{\frac{1}{1-\sigma}}$$</div><div class="math-display">$$\mu=\lambda\left[(\sigma\lambda\pi L)^{\frac{1}{1-\sigma}}\right]^\sigma$$</div><div class="math-display">$$\mu=\lambda(\sigma\lambda\pi L)^{\frac{\sigma}{1-\sigma}}$$</div></div><div class="derivation-step"><strong>2 · Collect the powers of λ</strong><div class="math-display">$$\mu=\lambda^{1+\frac{\sigma}{1-\sigma}}(\sigma\pi L)^{\frac{\sigma}{1-\sigma}}$$</div><div class="math-display">$$1+\frac{\sigma}{1-\sigma}=\frac{1-\sigma+\sigma}{1-\sigma}=\frac{1}{1-\sigma}$$</div><div class="math-display">$$\boxed{\mu=\lambda^{\frac{1}{1-\sigma}}(\sigma\pi L)^{\frac{\sigma}{1-\sigma}}}$$</div></div></div>
+
+      <p>At the optimal research choice, the success probability is constant over time when the parameters and population are fixed. It measures how likely innovation is; $\gamma$ determines the size of the improvement if research succeeds.</p>
     </section>
 
     <section class="concept-card amber-top" id="innovation-externalities">
@@ -193,10 +229,16 @@
     <section class="concept-card green-top" id="expected-growth">
       <div class="section-header"><span class="section-label">Growth</span><h3>From uncertain innovation to expected growth</h3></div>
       <p>GDP grows at the same rate as $A$: in the GDP expression, $L$ and the coefficient involving $\alpha$ are fixed. Each period therefore has two possible growth outcomes, depending on whether research succeeds.</p>
-      <div class="result-row"><strong>With probability $\mu$: innovation succeeds</strong><p>Technology moves from $A_{t-1}$ to $\gamma A_{t-1}$. Its proportional increase is:</p><div class="math-display">$$g_A=\frac{\gamma A_{t-1}-A_{t-1}}{A_{t-1}}=\gamma-1$$</div><p>The numerator is the increase in technology. Dividing by the previous level gives the growth rate associated with one successful innovation.</p></div>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-gdp-growth" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: why GDP grows at the rate of technology</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-gdp-growth"><div class="derivation-step"><strong>1 · Collect the constant terms</strong><div class="math-display">$$B\equiv\alpha^{\frac{2\alpha}{1-\alpha}}(1-\alpha^2)L$$</div><div class="math-display">$$GDP_t=BA_t,\qquad GDP_{t-1}=BA_{t-1}$$</div></div><div class="derivation-step"><strong>2 · Compute the proportional change</strong><div class="math-display">$$g_{GDP,t}=\frac{GDP_t-GDP_{t-1}}{GDP_{t-1}}$$</div><div class="math-display">$$g_{GDP,t}=\frac{B(A_t-A_{t-1})}{BA_{t-1}}$$</div><div class="math-display">$$\boxed{g_{GDP,t}=\frac{A_t-A_{t-1}}{A_{t-1}}=g_{A,t}}$$</div></div></div>
+
+      <div class="result-row"><strong>With probability $\mu$: innovation succeeds</strong><p>Technology moves from $A_{t-1}$ to $\gamma A_{t-1}$. Its proportional increase is:</p><div class="math-display">$$g_A=\frac{\gamma A_{t-1}-A_{t-1}}{A_{t-1}}=\gamma-1$$</div></div>
       <div class="result-row"><strong>With probability $1-\mu$: innovation fails</strong><p>Technology remains at $A_{t-1}$, so $g_A=0$ for that period.</p></div>
-      <p>Expected growth weights each outcome by its probability. Success contributes $\mu(\gamma-1)$ and failure contributes zero. Using the probability of success obtained above gives:</p>
+      <p>Expected growth combines the probability of innovation with the size of the productivity improvement:</p>
       <div class="math-display boxed">$$E(g_A)=\lambda^{\frac{1}{1-\sigma}}(\sigma\pi L)^{\frac{\sigma}{1-\sigma}}(\gamma-1)$$</div>
+      <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="demo-expected-growth" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: expected economic growth</span><span class="arrow" aria-hidden="true">▾</span></button>
+      <div class="collapsible" id="demo-expected-growth"><div class="derivation-step"><strong>1 · The two possible growth rates</strong><div class="math-display">$$g_A=\begin{cases}\gamma-1&\text{with probability }\mu,\\0&\text{with probability }1-\mu.\end{cases}$$</div></div><div class="derivation-step"><strong>2 · Take the expectation</strong><div class="math-display">$$E(g_A)=\mu(\gamma-1)+(1-\mu)\times0=\mu(\gamma-1)$$</div></div><div class="derivation-step"><strong>3 · Substitute the success probability</strong><div class="math-display">$$\mu=\lambda^{\frac{1}{1-\sigma}}(\sigma\pi L)^{\frac{\sigma}{1-\sigma}}$$</div><div class="math-display">$$\boxed{g=E(g_A)=\lambda^{\frac{1}{1-\sigma}}(\sigma\pi L)^{\frac{\sigma}{1-\sigma}}(\gamma-1)}$$</div></div></div>
+
       <div class="definition-strip"><h4>Read the two ingredients separately</h4><p>Expected growth combines how likely an innovation is with how much technology improves when it succeeds. It summarises the uncertain outcomes; it does not mean that the same innovation occurs in every period.</p></div>
     </section>
 
@@ -249,6 +291,18 @@
   </main>
 </div>
 <script>
+function toggleDerivation(button){
+  const panel=document.getElementById(button.getAttribute('aria-controls'));
+  const open=panel.classList.toggle('open');
+  button.classList.toggle('open',open);
+  button.setAttribute('aria-expanded',String(open));
+  const label=button.querySelector('.toggle-label');
+  label.textContent=label.textContent.replace(/^(Show|Hide)/,open?'Hide':'Show');
+  if(open && window.MathJax && MathJax.startup){
+    MathJax.startup.promise.then(()=>MathJax.typesetPromise([panel])).catch(error=>console.error('Math rendering failed',error));
+  }
+  window.dispatchEvent(new Event('scroll'));
+}
 function toggleSidebar(){const sidebar=document.getElementById('sidebar');sidebar.classList.toggle('open');document.getElementById('main-wrap').classList.toggle('expanded');document.querySelector('.topbar-toggle').setAttribute('aria-expanded',String(sidebar.classList.contains('open')))}
 function initChapterProgress(){const container=document.getElementById('chapterProgressBar');const cards=Array.from(document.querySelectorAll('.concept-card,.exo-card'));if(!container||!cards.length)return;const segments=cards.map((card,index)=>{const segment=document.createElement('div');segment.className='progress-segment'+(index===0?' active':'');const heading=card.querySelector('h3');segment.title=heading?heading.textContent:`Section ${index+1}`;segment.setAttribute('aria-label',segment.title);segment.setAttribute('role','button');segment.setAttribute('tabindex','0');const jump=()=>card.scrollIntoView({behavior:'smooth',block:'start'});segment.addEventListener('click',jump);segment.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();jump()}});container.appendChild(segment);return segment});function update(){let active=0;cards.forEach((card,index)=>{if(card.getBoundingClientRect().top<=160)active=index});segments.forEach((segment,index)=>segment.className='progress-segment'+(index<active?' completed':index===active?' active':''))}window.addEventListener('scroll',update,{passive:true});update()}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initChapterProgress);else initChapterProgress();if(window.matchMedia('(max-width:900px)').matches)toggleSidebar();
 </script>

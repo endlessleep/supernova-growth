@@ -28,10 +28,16 @@
 .graph-placeholder span{font-size:.8rem;font-weight:600}.graph-placeholder small{font-size:.72rem}
 .competition-figure figcaption{font-size:.86rem;line-height:1.65;color:var(--text-3)}
 .section-header{align-items:flex-start;flex-wrap:wrap}.section-header h3{flex:1;min-width:190px}
-.topbar-breadcrumb{min-width:0;flex:1}.topbar-breadcrumb strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.topbar-pill{flex-shrink:0}.chapter-progress-bar{display:flex;flex:1;min-width:0;gap:5px}.progress-segment{width:19px;flex:1;max-width:19px;min-width:0}
+/* Same top-right progress treatment as the Solow, Ramsey and AK sheets. */
+.topbar-breadcrumb{min-width:0;flex:0 1 auto}.topbar-breadcrumb strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.topbar-pill{flex-shrink:0;white-space:nowrap}
+.chapter-progress-bar{display:flex;flex:1;min-width:0;gap:6px;height:24px;margin:0 20px;padding:0 2px}
+.progress-segment{flex:1;width:auto;height:7px;border-radius:3px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.04);transition:all .25s cubic-bezier(.4,0,.2,1)}
+.progress-segment:hover{transform:scaleY(1.35);filter:brightness(1.25)}
+.progress-segment.completed{background:linear-gradient(90deg,#059669,#10b981);border-color:rgba(52,211,153,.5);box-shadow:0 0 8px rgba(16,185,129,.35)}
+.progress-segment.active{background:linear-gradient(90deg,#10b981,#34d399);border-color:rgba(52,211,153,.9);box-shadow:0 0 10px rgba(16,185,129,.6),0 0 4px rgba(52,211,153,.4)}
 :focus-visible{outline:2px solid var(--green-bright);outline-offset:4px}
-@media(max-width:1200px){.topbar{height:auto;min-height:64px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;row-gap:12px}.chapter-progress-bar{display:flex;order:4;flex:1 0 100%;min-height:12px}.concept-card,.exo-card{scroll-margin-top:110px}}
-@media(max-width:640px){.topbar{gap:10px}.topbar-breadcrumb{font-size:.8rem;max-width:none}.topbar-pill{padding:5px 10px}.topbar-breadcrumb .brand-short{display:none}.topbar-breadcrumb .sep{display:none}.graph-placeholder{height:145px}}
+@media(max-width:1200px){.topbar{gap:12px}.chapter-progress-bar{margin:0 6px;gap:4px}}
+@media(max-width:640px){.topbar{gap:8px}.topbar-breadcrumb{font-size:.8rem;max-width:none;flex:1}.topbar-pill{padding:5px 8px;font-size:.7rem;gap:5px}.topbar-breadcrumb .brand-short,.topbar-breadcrumb .sep{display:none}.chapter-progress-bar{flex:0 1 35%;margin:0;gap:3px}.progress-segment{height:5px}.graph-placeholder{height:145px}}
 </style>
 </head>
 <body>

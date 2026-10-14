@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECOGROWTH — Growth with Creation–Destruction</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<style>
+:root{--sidebar-bg:#07130c;--sidebar-width:280px;--bg:#0b0f0d;--bg-card:#121a15;--bg-deep:#060907;--green:#10b981;--green-bright:#34d399;--green-muted:rgba(16,185,129,.1);--green-border:rgba(16,185,129,.3);--blue-bright:#60a5fa;--blue-muted:rgba(59,130,246,.1);--blue-border:rgba(59,130,246,.3);--amber-bright:#fbbf24;--amber-muted:rgba(251,191,36,.08);--amber-border:rgba(251,191,36,.3);--purple-bright:#c084fc;--purple-muted:rgba(168,85,247,.1);--purple-border:rgba(168,85,247,.3);--text:#f8fafc;--text-2:#cbd5e1;--text-3:#94a3b8;--text-muted:#64748b;--border:rgba(255,255,255,.07);--radius:10px;--radius-lg:16px;--font:'Outfit',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--font);background:var(--bg);color:var(--text);display:flex;min-height:100vh;-webkit-font-smoothing:antialiased}.sidebar{width:var(--sidebar-width);background:var(--sidebar-bg);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:200;transition:transform .3s ease;overflow:hidden}.sidebar:not(.open){transform:translateX(-100%)}.sidebar-brand{padding:22px 20px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}.sidebar-brand h1{font-size:1.25rem;font-weight:800;letter-spacing:1px}.sidebar-brand h1 span{color:var(--green)}.sidebar-close{background:none;border:none;color:var(--text-3);font-size:1.4rem;cursor:pointer}.sidebar-nav{flex:1;overflow-y:auto;padding:12px 0}.sidebar-group{display:flex;flex-direction:column;gap:2px;margin-top:6px}.sidebar-group-title{padding:10px 22px 4px;font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--text-3)}.sidebar-sublink{display:flex;align-items:center;gap:10px;padding:9px 22px 9px 36px;color:var(--text-3);text-decoration:none;font-size:.85rem;font-weight:600;transition:all .2s;border-left:3px solid transparent}.sidebar-sublink:hover{color:var(--text);background:rgba(255,255,255,.04)}.sidebar-sublink.active{color:var(--green-bright);border-left-color:var(--green);background:var(--green-muted)}.sidebar-footer{padding:14px 16px;border-top:1px solid var(--border)}.sidebar-user{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px}.user-avatar{width:34px;height:34px;border-radius:8px;position:relative;flex-shrink:0}.user-avatar img{width:100%;height:100%;border-radius:8px;object-fit:cover}.user-dot{width:8px;height:8px;background:var(--green);border-radius:50%;border:2px solid var(--sidebar-bg);position:absolute;bottom:-2px;right:-2px;box-shadow:0 0 6px var(--green)}.user-name{font-size:.82rem;font-weight:700}.main-wrap{margin-left:var(--sidebar-width);flex:1;display:flex;flex-direction:column;transition:margin-left .3s;min-width:0}.main-wrap.expanded{margin-left:0}.topbar{height:64px;background:rgba(11,15,13,.9);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;display:flex;align-items:center;padding:0 28px;gap:16px}.topbar-toggle{background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text);width:38px;height:38px;border-radius:8px;cursor:pointer;font-size:1.1rem;flex-shrink:0}.topbar-breadcrumb{color:var(--text-3);font-size:.88rem;display:flex;align-items:center;gap:6px}.topbar-breadcrumb .sep{opacity:.4}.topbar-breadcrumb strong{color:var(--text);font-weight:700}.topbar-pill{margin-left:auto;background:var(--green-muted);border:1px solid var(--green-border);color:var(--green-bright);padding:5px 14px;border-radius:999px;font-size:.78rem;font-weight:700;display:flex;align-items:center;gap:7px}.topbar-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 7px var(--green)}.main-content{padding:40px 44px 70px;max-width:880px;width:100%;margin:0 auto;display:flex;flex-direction:column;gap:28px}.page-title-block{border-bottom:1px solid var(--border);padding-bottom:24px}.page-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--green);margin-bottom:8px}.page-title-block h1{font-size:2rem;font-weight:800;letter-spacing:-.5px;line-height:1.15}.page-title-block p{color:var(--text-3);font-size:.95rem;margin-top:7px}.course-part{display:flex;align-items:center;gap:14px;margin-top:12px;font-size:1.2rem}.course-part:before{content:'';width:22px;height:3px;border-radius:3px;background:var(--green);flex-shrink:0}.concept-card,.exo-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:16px;scroll-margin-top:80px}.concept-card{transition:transform .2s,border-color .2s}.concept-card:hover{transform:translateY(-2px);border-color:var(--green-border)}.green-top{border-top:3px solid var(--green)}.blue-top{border-top:3px solid var(--blue-bright)}.amber-top{border-top:3px solid var(--amber-bright)}.purple-top{border-top:3px solid var(--purple-bright)}.section-header{display:flex;align-items:center;gap:12px;margin-bottom:4px}.section-label{background:var(--green-muted);border:1px solid var(--green-border);color:var(--green-bright);font-size:.72rem;font-weight:800;padding:3px 11px;border-radius:999px;white-space:nowrap}.section-header h3{font-size:1.05rem;font-weight:800;color:var(--text)}.concept-card p,.exo-card p,.reading-tile p,.definition-strip p,.result-row p{font-size:.92rem;line-height:1.7;color:var(--text-2)}.math-display{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;text-align:center;margin:4px 0;overflow-x:auto}.math-display.boxed{border-color:var(--green-border);background:var(--green-muted)}.math-display.boxed-blue{border-color:var(--blue-border);background:var(--blue-muted)}.math-display.boxed-amber{border-color:var(--amber-border);background:var(--amber-muted)}.math-display.boxed-purple{border-color:var(--purple-border);background:var(--purple-muted)}.definition-strip,.reading-block{border-left:3px solid var(--green);padding:12px 18px;background:var(--green-muted);border-radius:0 var(--radius) var(--radius) 0}.definition-strip h4,.reading-block h4,.takeaway h4{font-size:.92rem;color:var(--text);margin-bottom:5px}.reading-block{background:rgba(255,255,255,.02);border-color:var(--border)}.reading-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.reading-tile{padding:15px;border:1px solid var(--border);border-radius:var(--radius);background:rgba(255,255,255,.02)}.reading-tile h4{font-size:.88rem;color:var(--text);margin-bottom:6px}.takeaway{background:var(--amber-muted);border:1px solid var(--amber-border);border-radius:var(--radius);padding:15px 17px}.takeaway h4{color:var(--amber-bright)}.takeaway p{font-size:.9rem!important}.idea-list{display:flex;flex-direction:column;gap:10px}.idea-row{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--border)}.idea-row:last-child{border-bottom:0}.idea-index{width:26px;height:26px;display:grid;place-items:center;flex-shrink:0;border-radius:7px;background:var(--green-muted);border:1px solid var(--green-border);font-size:.76rem;font-weight:800;color:var(--green-bright)}.idea-row p{font-size:.9rem}.sector-flow{display:flex;align-items:stretch;gap:8px;overflow-x:auto;padding:2px 0}.sector-step{min-width:142px;flex:1;padding:13px;border:1px solid var(--border);border-radius:var(--radius);background:rgba(255,255,255,.02)}.sector-step strong{display:block;font-size:.85rem;margin-bottom:4px}.sector-step span{font-size:.78rem;color:var(--text-3);line-height:1.4}.flow-arrow{display:flex;align-items:center;color:var(--green);font-size:1.2rem}.result-row{padding:0 0 16px;border-bottom:1px solid var(--border)}.result-row:last-child{padding-bottom:0;border-bottom:0}.result-row strong{display:block;color:var(--text);margin-bottom:4px}.exo-card{border-color:var(--purple-border);background:linear-gradient(135deg,rgba(168,85,247,.08),rgba(18,26,21,1) 55%)}.exo-card .section-label{background:var(--purple-muted);border-color:var(--purple-border);color:var(--purple-bright)}.exo-q{padding:14px 0;border-bottom:1px solid var(--border)}.exo-q:last-child{padding-bottom:0;border-bottom:0}.exo-q strong{color:var(--purple-bright);display:block;margin-bottom:5px}.chapter-progress-bar{display:flex;gap:5px;align-items:center;justify-content:center;flex:1}.progress-segment{width:19px;height:5px;border-radius:10px;background:rgba(255,255,255,.12);cursor:pointer}.progress-segment.active{background:var(--green);box-shadow:0 0 8px var(--green)}.progress-segment.completed{background:var(--green-bright)}@media(max-width:900px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.main-wrap{margin-left:0!important}.main-content{padding:24px 20px 40px}.topbar{padding:0 14px}.chapter-progress-bar{display:none}}@media(max-width:640px){.concept-card,.exo-card{padding:20px 18px}.reading-grid{grid-template-columns:1fr}.page-title-block h1{font-size:1.65rem}.topbar-breadcrumb{max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sector-flow{padding-bottom:5px}.flow-arrow{display:none}}
+.toggle-btn{display:inline-flex;align-items:center;gap:8px;width:fit-content;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:999px;color:var(--text-2);font:700 .82rem var(--font);padding:9px 15px;cursor:pointer;transition:.2s}.toggle-btn:hover{border-color:var(--green-border);color:var(--green-bright);background:var(--green-muted)}.toggle-btn .arrow{font-size:.65rem;transition:transform .2s}.toggle-btn.open .arrow{transform:rotate(180deg)}.collapsible{display:none;margin-top:10px;padding:18px;border:1px solid var(--border);border-radius:var(--radius);background:rgba(6,9,7,.65);font-size:.9rem;color:var(--text-2);line-height:1.7}.collapsible.open{display:block}.collapsible p+p{margin-top:10px}.derivation-step{padding:12px 0;border-bottom:1px solid var(--border)}.derivation-step:last-child{border-bottom:0;padding-bottom:0}.derivation-step strong{color:var(--green-bright)}
+@media(max-width:640px){.sector-flow{display:grid;grid-template-columns:1fr}.sector-step{min-width:0}}
+.chapter-compass{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:4px 0}.compass-step{position:relative;padding:14px;border:1px solid var(--border);border-radius:var(--radius);background:rgba(255,255,255,.025)}.compass-step:not(:last-child):after{content:'→';position:absolute;right:-17px;top:50%;transform:translateY(-50%);z-index:2;color:var(--green-bright);font-size:1.05rem}.compass-step span,.study-unit .eyebrow,.formula-caption,.memory-cue span{display:block;color:var(--green-bright);font-size:.67rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.compass-step strong{display:block;margin-top:5px;font-size:.82rem;line-height:1.25}.compass-step small{display:block;margin-top:5px;color:var(--text-3);font-size:.74rem;line-height:1.35}.study-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.study-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.study-unit{padding:16px;border:1px solid var(--border);border-radius:var(--radius);background:rgba(255,255,255,.022);min-width:0}.study-unit:hover{border-color:var(--green-border)}.study-unit h4{margin:6px 0 8px;font-size:.94rem;line-height:1.2}.study-unit p{font-size:.84rem!important;line-height:1.55!important;color:var(--text-2)}.study-unit ul{display:flex;flex-direction:column;gap:7px;list-style:none}.study-unit li{font-size:.82rem;line-height:1.45;color:var(--text-2);padding-left:13px;position:relative}.study-unit li:before{content:'•';position:absolute;left:0;color:var(--green-bright)}.study-unit .math-display{padding:9px 8px;margin:9px 0 0;font-size:.9rem}.study-unit.blue .eyebrow{color:var(--blue-bright)}.study-unit.amber .eyebrow{color:var(--amber-bright)}.study-unit.purple .eyebrow{color:var(--purple-bright)}.formula-story{padding:15px 17px;border:1px solid var(--green-border);border-radius:var(--radius);background:linear-gradient(100deg,var(--green-muted),rgba(255,255,255,.018))}.formula-story .math-display{margin:8px 0 0;background:transparent;border:0;padding:5px}.formula-caption{margin-bottom:3px}.formula-chain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:stretch}.formula-node{display:flex;flex-direction:column;justify-content:center;padding:13px;border:1px solid var(--border);border-radius:var(--radius);background:rgba(255,255,255,.022);text-align:center}.formula-node strong{font-size:.82rem;line-height:1.35}.formula-node span{margin-top:5px;color:var(--text-3);font-size:.72rem;line-height:1.35}.formula-arrow{display:grid;place-items:center;color:var(--green-bright);font-size:1.1rem}.memory-cue{display:flex;gap:11px;align-items:flex-start;padding:13px 15px;border-radius:var(--radius);border:1px solid var(--amber-border);background:var(--amber-muted)}.memory-cue:before{content:'✓';display:grid;place-items:center;width:22px;height:22px;flex:0 0 22px;border-radius:50%;background:rgba(251,191,36,.16);color:var(--amber-bright);font-size:.75rem;font-weight:800}.memory-cue span{color:var(--amber-bright);margin-bottom:3px}.memory-cue p{font-size:.87rem!important;line-height:1.55!important}.compact-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.compact-item{padding:12px 13px;border-radius:var(--radius);background:rgba(255,255,255,.022);border:1px solid var(--border)}.compact-item strong{display:block;font-size:.8rem;color:var(--text);margin-bottom:3px}.compact-item p{font-size:.78rem!important;line-height:1.45!important}.result-strip{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;align-items:center;padding:15px;border:1px solid var(--blue-border);border-radius:var(--radius);background:var(--blue-muted)}.result-strip h4{font-size:.86rem;margin-bottom:5px}.result-strip p{font-size:.83rem!important;line-height:1.5!important}.result-strip .math-display{margin:0;padding:8px;background:rgba(6,9,7,.22)}.question-label{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--purple-bright);margin-bottom:6px}.exo-setup{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.exo-setup .study-unit{padding:13px}@media(max-width:760px){.chapter-compass,.study-grid.three,.exo-setup{grid-template-columns:1fr 1fr}.compass-step:not(:last-child):after{display:none}.formula-chain{grid-template-columns:1fr;gap:5px}.formula-arrow{transform:rotate(90deg);height:17px}.result-strip{grid-template-columns:1fr}}@media(max-width:520px){.study-grid,.study-grid.three,.chapter-compass,.compact-list,.exo-setup{grid-template-columns:1fr}.main-content{gap:22px}}
+/* Preserve the reading rhythm of the previous chapters. */
+.chapter-compass{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.compass-step{padding:13px;background:rgba(255,255,255,.02)}.compass-step:not(:last-child):after{display:none}.compass-step strong{font-size:.88rem}.compass-step small{font-size:.8rem;line-height:1.5}.study-grid{gap:8px}.study-grid.three{display:flex;flex-direction:column;gap:0}.study-grid.three .study-unit{display:block;padding:14px 0;border:0;border-bottom:1px solid var(--border);border-radius:0;background:transparent}.study-grid.three .study-unit:last-child{border-bottom:0}.study-grid.three .study-unit:before{display:none}.study-grid.three .study-unit .eyebrow{margin:0 0 4px}.study-grid.three .study-unit h4{margin:0 0 4px;font-size:.94rem}.study-grid.three .study-unit p{font-size:.88rem!important;line-height:1.65!important}.study-unit{padding:15px;border-radius:var(--radius);background:rgba(255,255,255,.02)}.study-unit h4{font-size:.88rem}.study-unit p{font-size:.86rem!important;line-height:1.65!important}.study-unit ul{gap:6px}.study-unit li{font-size:.86rem;line-height:1.55}.formula-story{border:0;border-left:3px solid var(--green);border-radius:0 var(--radius) var(--radius) 0;background:var(--green-muted);padding:13px 18px}.formula-story .math-display{padding:11px 12px;margin:9px 0 0;border:1px solid var(--green-border);background:rgba(255,255,255,.02)}.formula-chain{display:flex;flex-direction:column;gap:0;border-left:3px solid var(--border);padding-left:18px}.formula-arrow{display:none}.formula-node{display:block;padding:12px 0;border:0;border-bottom:1px solid var(--border);border-radius:0;background:transparent;text-align:left}.formula-node:last-child{border-bottom:0}.formula-node strong{font-size:.9rem}.formula-node span{font-size:.84rem;line-height:1.55}.memory-cue{display:block;border:1px solid var(--amber-border);border-radius:var(--radius);padding:14px 17px;background:var(--amber-muted)}.memory-cue:before{display:none}.memory-cue span{font-size:.88rem;letter-spacing:0;text-transform:none;font-weight:800}.memory-cue p{font-size:.9rem!important;line-height:1.7!important}.compact-list{gap:8px}.compact-item{padding:11px 13px;background:rgba(255,255,255,.02)}.compact-item strong{font-size:.85rem}.compact-item p{font-size:.84rem!important;line-height:1.6!important}.result-strip{display:block;padding:13px 18px;border:0;border-left:3px solid var(--blue-bright);border-radius:0 var(--radius) var(--radius) 0;background:var(--blue-muted)}.result-strip h4{font-size:.92rem}.result-strip p{font-size:.9rem!important;line-height:1.7!important}.result-strip .math-display{margin-top:10px;padding:11px 12px;background:rgba(255,255,255,.025);border-color:var(--blue-border)}.exo-setup{grid-template-columns:1fr 1fr;gap:8px}.exo-setup .study-unit{padding:13px}.idea-row>div{min-width:0}.idea-row h4{font-size:.9rem;color:var(--text);margin:0 0 4px}.idea-row p{margin:0}@media(max-width:640px){.chapter-compass,.study-grid,.compact-list,.exo-setup{grid-template-columns:1fr}}
+
+.source-note{font-size:.8rem!important;color:var(--text-3)!important}
+.competition-figure{display:flex;flex-direction:column;gap:14px;margin:2px 0}
+.graph-placeholder{width:min(100%,340px);height:155px;align-self:center;border:1px dashed var(--green-border);border-radius:var(--radius);background:rgba(255,255,255,.015);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--text-muted)}
+.graph-placeholder span{font-size:.8rem;font-weight:600}.graph-placeholder small{font-size:.72rem}
+.competition-figure figcaption{font-size:.86rem;line-height:1.65;color:var(--text-3)}
+.section-header{align-items:flex-start;flex-wrap:wrap}.section-header h3{flex:1;min-width:190px}
+.topbar-breadcrumb{min-width:0;flex:1}.topbar-breadcrumb strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.topbar-pill{flex-shrink:0}.chapter-progress-bar{flex:0 1 auto;gap:4px}.progress-segment{width:10px}
+:focus-visible{outline:2px solid var(--green-bright);outline-offset:4px}
+@media(max-width:1200px){.chapter-progress-bar{display:none}}
+@media(max-width:640px){.topbar{gap:10px}.topbar-breadcrumb{font-size:.8rem;max-width:none}.topbar-pill{padding:5px 10px}.topbar-breadcrumb .brand-short{display:none}.topbar-breadcrumb .sep{display:none}.graph-placeholder{height:145px}}
+</style>
+</head>
+<body>
+<aside class="sidebar open" id="sidebar">
+  <div class="sidebar-brand"><h1>ECOGROWTH<span>.</span></h1><button class="sidebar-close" aria-label="Close navigation" onclick="toggleSidebar()">✕</button></div>
+  <nav class="sidebar-nav">
+    <div class="sidebar-group"><div class="sidebar-group-title">📂 1 — Neoclassical Growth Model</div><a href="solow.html" class="sidebar-sublink">a) Solow Model</a><a href="ramsey.html" class="sidebar-sublink">b) Ramsey Model</a></div>
+    <div class="sidebar-group"><div class="sidebar-group-title">📂 2 — Externalities and Growth</div><a href="ak.html" class="sidebar-sublink">The AK Model</a></div>
+    <div class="sidebar-group"><div class="sidebar-group-title">📂 3 — Innovation and Growth</div><a href="variety.html" class="sidebar-sublink">Variety of intermediate goods</a></div>
+    <div class="sidebar-group"><div class="sidebar-group-title">📂 4 — Creation–Destruction</div><a href="creation-destruction.html" class="sidebar-sublink active" aria-current="page">The Aghion–Howitt Model</a></div>
+  </nav>
+  <div class="sidebar-footer"><div class="sidebar-user"><div class="user-avatar"><img src="images/avatar.png" alt="STAR NOVA"><span class="user-dot"></span></div><div class="user-name">STAR NOVA</div></div></div>
+</aside>
+<div class="main-wrap" id="main-wrap">
+  <div class="topbar"><button class="topbar-toggle" aria-label="Toggle navigation" aria-controls="sidebar" aria-expanded="true" onclick="toggleSidebar()">☰</button><div class="topbar-breadcrumb"><span class="brand-short">ECOGROWTH</span> <span class="sep">›</span> <strong>Creation–Destruction</strong></div><div class="chapter-progress-bar" id="chapterProgressBar" role="navigation" aria-label="Chapter sections"></div><div class="topbar-pill"><span class="topbar-dot"></span>Chapter 4</div></div>
+  <main class="main-content">
+        <div class="page-title-block">
+      <div class="page-label">Chapter 4 — Economic Growth</div>
+      <h1>Growth with Creation–Destruction</h1>
+      <p>Anne Epaulard · Macroeconomics 1, Part 1 · Autumn 2025</p>
+    </div>
+
+    <h2 class="course-part">The Aghion–Howitt model</h2>
+
+    <section class="concept-card green-top" id="creative-destruction">
+      <div class="section-header"><span class="section-label">Introduction</span><h3>Growth through creative destruction</h3></div>
+      <p>The Aghion–Howitt model explains economic growth through Schumpeter’s process of <strong>creative destruction</strong>. Research firms compete to generate innovations, and these innovations produce technological progress. In this model, technological progress is the source of economic growth.</p>
+      <p>Each successful innovation introduces a new intermediate good that allows the final good to be produced more efficiently. An intermediate good is an input used in production. The new input replaces the existing one, which becomes obsolete: the same innovation therefore creates a new production opportunity and destroys the economic position of the previous technology.</p>
+      <div class="definition-strip"><h4>The incentive to innovate</h4><p>A successful researcher can patent the innovation and obtain monopoly rents from producing the new intermediate good. These rents are the profits associated with being its exclusive producer. Their prospect motivates research, but they are exposed to destruction by the next innovation.</p></div>
+      <p class="source-note">Model reference: Aghion and Howitt (1992).</p>
+    </section>
+
+    <section class="concept-card blue-top" id="building-blocks">
+      <div class="section-header"><span class="section-label">Framework</span><h3>Building blocks of the model</h3></div>
+      <p>The framework has many similarities with Romer’s model studied in the previous chapter. Here, we use a simplified Aghion–Howitt model with <strong>only one intermediate good</strong>. Three production sectors perform different tasks and operate under different market structures.</p>
+      <div class="idea-list">
+        <div class="idea-row"><span class="idea-index">1</span><div><h4>Final-good sector</h4><p>It combines labour and the intermediate input to produce the final good. This sector operates under perfect competition, so firms take input prices as given.</p></div></div>
+        <div class="idea-row"><span class="idea-index">2</span><div><h4>Intermediate-good sector</h4><p>It uses the final good to produce the intermediate input. The course describes this sector under monopolistic competition; in the one-input version, the producer of the current intermediate good has monopoly power over its supply.</p></div></div>
+        <div class="idea-row"><span class="idea-index">3</span><div><h4>Research sector</h4><p>It undertakes research to create an innovation. Success is uncertain: its probability increases with current research expenditure and decreases with the technological level inherited from previous research, for a given expenditure. The research sector is described as perfectly competitive.</p></div></div>
+      </div>
+      <div class="reading-block"><h4>The household sector</h4><p>One representative household chooses consumption over time to maximise intertemporal utility. Labour has no disutility in the utility function: working is not represented as a separate cost in utility.</p></div>
+    </section>
+
+    <h2 class="course-part">Households and production</h2>
+
+    <section class="concept-card green-top" id="households">
+      <div class="section-header"><span class="section-label">Households</span><h3>Consumption, wealth and optimal growth</h3></div>
+      <p>The representative household chooses its consumption path $c(t)$ to maximise utility over an infinite horizon:</p>
+      <div class="math-display">$$\max_{\{c(t)\}}\int_0^\infty \frac{c(t)^{1-\varepsilon}-1}{1-\varepsilon}e^{-\rho t}\,dt$$</div>
+      <p>The fraction inside the integral is utility from consumption at date $t$. The parameter $\varepsilon$ describes the curvature of utility. The discount factor $e^{-\rho t}$ gives less weight to utility received later, with $\rho$ representing the household’s rate of time preference.</p>
+      <div class="reading-block"><h4>Labour and prices taken as given</h4><p>Labour $L$ is constant: there is no population growth and no disutility of labour. The household takes the wage $w(t)$ and the interest rate $r(t)$ as given. The course works with a constant rate, $r(t)=r$, and states that allowing a time-varying rate would lead to a constant rate when the model is solved.</p></div>
+      <p>Consumption must be financed from income and wealth. If $S(t)$ denotes wealth, its accumulation equation is:</p>
+      <div class="math-display">$$\frac{dS(t)}{dt}=r(t)S(t)+w(t)L(t)-c(t)$$</div>
+      <p>The term $r(t)S(t)$ is interest income, and $w(t)L(t)$ is labour income. Both add to wealth, while current consumption $c(t)$ reduces it. The left-hand side is the change in wealth over time.</p>
+      <div class="reading-block"><h4>The transversality condition used in the course</h4><p>With a constant interest rate, the condition is written in terms of discounted wealth. It requires this discounted amount to approach zero as the horizon becomes arbitrarily distant:</p><div class="math-display">$$\lim_{t\to\infty}S(t)e^{-rt}=0$$</div></div>
+      <div class="formula-story"><span class="formula-caption">Optimal consumption growth</span><div class="math-display boxed">$$g_C=\frac{r-\rho}{\varepsilon}$$</div></div>
+      <p>This result gives the growth rate of consumption on the optimal path. It relates the return from saving, $r$, to the household’s impatience, $\rho$. The parameter $\varepsilon$ determines how their difference translates into consumption growth.</p>
+    </section>
+
+    <section class="concept-card blue-top" id="final-good-production">
+      <div class="section-header"><span class="section-label">Final good</span><h3>The production function</h3></div>
+      <p>The final-good sector combines labour with the current intermediate input. Its production function is:</p>
+      <div class="math-display boxed-blue">$$Y_t=(A_tL)^{1-\alpha}x_t^\alpha$$</div>
+      <div class="reading-grid">
+        <div class="reading-tile"><h4>Output and the intermediate input</h4><p>$Y_t$ is output in the final-good sector at date $t$, and $x_t$ is the quantity of the intermediate good used in that production.</p></div>
+        <div class="reading-tile"><h4>Technology and labour</h4><p>$A_t$ is the technology level and $L$ is the fixed quantity of labour. They enter together through $A_tL$. The exponents $1-\alpha$ and $\alpha$ determine how this term and the intermediate input enter production.</p></div>
+      </div>
+      <p>The formula links technological progress to production: a better intermediate technology is represented by a higher $A_t$, allowing the final-good sector to produce more efficiently.</p>
+    </section>
+
+    <section class="concept-card amber-top" id="intermediate-production-gdp">
+      <div class="section-header"><span class="section-label">Accounting</span><h3>Intermediate-good production and GDP</h3></div>
+      <p>Producing one unit of the intermediate good requires one unit of the final good. Producing $x_t$ units of the input therefore uses $x_t$ units of final output. This is the one-for-one production requirement written as $x=x$ in the support.</p>
+      <p>The final good used to make intermediate inputs must be deducted from final-sector output when calculating GDP. Let $X_t$ denote this use of the final good; with one intermediate input, $X_t=x_t$.</p>
+      <div class="math-display boxed-amber">$$GDP_t=Y_t-X_t$$</div>
+      <p>The remaining resources have two uses: household consumption, $C_t$, and research expenditure, $R_t$.</p>
+      <div class="math-display boxed">$$GDP_t=C_t+R_t$$</div>
+      <div class="definition-strip"><h4>Research uses the final good</h4><p>There is no physical investment in this simplified model. Research is an investment activity, but it is financed using units of the final good. GDP therefore includes both consumption and the resources devoted to research.</p></div>
+    </section>
+
+    <section class="concept-card blue-top" id="prices-wages">
+      <div class="section-header"><span class="section-label">Perfect competition</span><h3>The price of the intermediate input and wages</h3></div>
+      <p>Under perfect competition in the final-good sector, each input is paid its marginal productivity: the extra final output obtained from an additional unit of that input, holding the other inputs fixed.</p>
+      <div class="result-row"><strong>The intermediate-input price</strong><div class="math-display boxed-blue">$$p_t=\alpha(A_tL)^{1-\alpha}x_t^{\alpha-1}$$</div><p>The price $p_t$ equals the marginal productivity of the intermediate input. The final good’s price is normalised to 1, so $p_t$ is measured in units of the final good.</p></div>
+      <div class="result-row"><strong>The wage</strong><div class="math-display boxed">$$w_t=(1-\alpha)L^{-\alpha}A_t^{1-\alpha}x_t^\alpha$$</div><p>The wage $w_t$ equals the marginal productivity of labour in final-good production. It measures the payment for one unit of labour, again in units of the final good.</p></div>
+    </section>
+
+    <section class="concept-card green-top" id="intermediate-profit">
+      <div class="section-header"><span class="section-label">Monopoly profit</span><h3>Profit maximisation in the intermediate-good sector</h3></div>
+      <p>The intermediate-good producer chooses its quantity $x_t$ to maximise profit. Its revenue is $p_tx_t$, while its production cost is $x_t$, because each unit requires one unit of the final good.</p>
+      <div class="math-display">$$\Pi_t=p_tx_t-x_t=\alpha(A_tL)^{1-\alpha}x_t^\alpha-x_t$$</div>
+      <p>The second expression substitutes the price equation into revenue: multiplying $x_t^{\alpha-1}$ by $x_t$ gives $x_t^\alpha$. The producer faces the price–quantity relationship from the final-good sector. Although final-good firms take prices as given, the monopolist accounts for this relationship when choosing its quantity.</p>
+      <div class="formula-story"><span class="formula-caption">Profit-maximising quantity</span><div class="math-display boxed">$$x_t=A_tL\alpha^{\frac{2}{1-\alpha}}$$</div></div>
+      <p>This is the quantity selected by the intermediate-good producer. For a given production parameter $\alpha$, its scale depends on the technology level $A_t$ and the size of the labour force $L$.</p>
+      <div class="math-display boxed-blue">$$\Pi_t=\pi A_tL$$</div>
+      <div class="math-display">$$\pi=(1-\alpha)\alpha^{\frac{1+\alpha}{1-\alpha}}$$</div>
+      <p>The capital letter $\Pi_t$ denotes the producer’s profit at date $t$. The lower-case $\pi$ is a coefficient determined by $\alpha$; it summarises the constant part of the profit expression. Writing profit as $\pi A_tL$ makes the roles of technology and market size easier to read.</p>
+    </section>
+
+    <section class="concept-card amber-top" id="output-gdp">
+      <div class="section-header"><span class="section-label">Production</span><h3>Final-good output and GDP</h3></div>
+      <p>With the intermediate-good producer choosing the quantity stated above, final-sector output and GDP take the following forms:</p>
+      <div class="result-row"><strong>Final-good output</strong><div class="math-display boxed">$$Y_t=\alpha^{\frac{2\alpha}{1-\alpha}}A_tL$$</div></div>
+      <div class="result-row"><strong>GDP after deducting intermediate production</strong><div class="math-display boxed-amber">$$GDP_t=\alpha^{\frac{2\alpha}{1-\alpha}}(1-\alpha^2)A_tL$$</div></div>
+      <p>The two expressions retain the distinction between total final-sector output and GDP. The factor $1-\alpha^2$ in the GDP formula reflects the deduction of the final good used to produce the intermediate input. In both expressions, the changing technology level enters through $A_t$.</p>
+    </section>
+
+    <h2 class="course-part">Research and innovation</h2>
+
+    <section class="concept-card purple-top" id="research-technology">
+      <div class="section-header"><span class="section-label">Research</span><h3>Success, failure and technological progress</h3></div>
+      <p>In each period, an entrepreneur can undertake research. The outcome is uncertain. A successful innovation improves the technology level by a factor $\gamma$, whereas a failed research attempt leaves technology unchanged.</p>
+      <div class="reading-grid">
+        <div class="reading-tile"><h4>If research succeeds</h4><div class="math-display boxed">$$A_t=\gamma A_{t-1},\qquad \gamma>1$$</div><p>The new technology is $\gamma$ times the previous level. The parameter $\gamma$ describes the size of the technological improvement.</p></div>
+        <div class="reading-tile"><h4>If research fails</h4><div class="math-display">$$A_t=A_{t-1}$$</div><p>No new technology is introduced, so the economy continues with its previous technology level.</p></div>
+      </div>
+      <p>The probability of success, $\mu_t$, depends on research expenditure $R_t$ relative to the technology level being targeted:</p>
+      <div class="math-display boxed-purple">$$\mu_t=\lambda\left(\frac{R_t}{\gamma A_{t-1}}\right)^\sigma,\qquad \sigma<1$$</div>
+      <p>The parameter $\lambda$ represents research efficiency. The ratio $R_t/(\gamma A_{t-1})$ measures research expenditure relative to the technology level that a successful innovation would achieve. The exponent $\sigma$ describes the response of success to this research effort; the course assumes a diminishing response.</p>
+      <p>More current research raises the probability of success. For a given research expenditure, a higher inherited technology level $A_{t-1}$ reduces the ratio in the formula and therefore makes further progress harder to achieve.</p>
+    </section>
+
+    <section class="concept-card green-top" id="research-profit">
+      <div class="section-header"><span class="section-label">Research incentives</span><h3>The researcher’s expected profit</h3></div>
+      <p>A researcher who succeeds introduces the new intermediate good and becomes its producer. This is the reward for successful research: access to the profit associated with the new technology.</p>
+      <div class="reading-block"><h4>The allocation rule in this simplified model</h4><p>If research fails, production of the previous period’s intermediate good is randomly allocated to another producer, who is not necessarily the previous producer. This is the specific rule used in the version of the model presented here.</p></div>
+      <p>Let $\Pi_t^*$ denote the profit obtained if the researcher succeeds. The researcher’s expected profit is:</p>
+      <div class="math-display boxed-purple">$$\mu_t\Pi_t^*-R_t=\lambda\left(\frac{R_t}{\gamma A_{t-1}}\right)^\sigma\Pi_t^*-R_t$$</div>
+      <p>The product $\mu_t\Pi_t^*$ weights the successful outcome’s profit by its probability. Research expenditure $R_t$ is then subtracted because it must be paid whether research succeeds or fails. The expression captures the researcher’s choice between a costly research effort and an uncertain reward.</p>
+    </section>
+
+    <section class="concept-card blue-top" id="optimal-research">
+      <div class="section-header"><span class="section-label">Research choice</span><h3>Optimal spending and the probability of success</h3></div>
+      <p>Maximising the expected-profit expression gives the following optimal research expenditure, expressed relative to the technology level targeted by innovation:</p>
+      <div class="math-display boxed">$$\frac{R_t}{\gamma A_{t-1}}=(\sigma\lambda\pi L)^{\frac{1}{1-\sigma}}$$</div>
+      <p>The left-hand side is the research ratio used in the success-probability equation. The right-hand side combines the research parameters $\sigma$ and $\lambda$ with the profit coefficient $\pi$ and the labour force $L$. This result connects the research decision to the profit available from supplying the intermediate good.</p>
+      <p>At this research choice, the probability of success is:</p>
+      <div class="math-display boxed-blue">$$\mu=\lambda^{\frac{1}{1-\sigma}}(\sigma\pi L)^{\frac{\sigma}{1-\sigma}}$$</div>
+      <p>The course writes this probability as $\mu$, without a time subscript: with the parameters and $L$ fixed, the expression is the same in each period. It is the probability that research produces a new technology, rather than the size of that technology’s improvement.</p>
+    </section>
+
+    <section class="concept-card amber-top" id="innovation-externalities">
+      <div class="section-header"><span class="section-label">Externalities</span><h3>Three effects of innovation beyond the researcher</h3></div>
+      <p>The researcher chooses expenditure according to private expected profit. The course identifies three effects of innovation that matter beyond this private calculation.</p>
+      <div class="idea-list">
+        <div class="idea-row"><span class="idea-index">1</span><div><h4>A benefit larger than the monopoly rent</h4><p>The monopoly rent received by the successful researcher is smaller than the surplus the innovation generates for the economy. The private reward therefore captures only part of the innovation’s total benefit.</p></div></div>
+        <div class="idea-row"><span class="idea-index">2</span><div><h4>A higher technological level for future research</h4><p>Each innovation raises $A$. In the research relationship used here, this reduces the success probability of a given future research expenditure. The course describes this as a reduction in the return to future research.</p></div></div>
+        <div class="idea-row"><span class="idea-index">3</span><div><h4>Destruction of the previous innovation</h4><p>The new intermediate technology makes the previous one obsolete and destroys the rent attached to it. The reward obtained by the new producer is therefore accompanied by a loss for the previous innovation.</p></div></div>
+      </div>
+    </section>
+
+    <h2 class="course-part">Economic growth and competition</h2>
+
+    <section class="concept-card green-top" id="expected-growth">
+      <div class="section-header"><span class="section-label">Growth</span><h3>From uncertain innovation to expected growth</h3></div>
+      <p>GDP grows at the same rate as $A$: in the GDP expression, $L$ and the coefficient involving $\alpha$ are fixed. Each period therefore has two possible growth outcomes, depending on whether research succeeds.</p>
+      <div class="result-row"><strong>With probability $\mu$: innovation succeeds</strong><p>Technology moves from $A_{t-1}$ to $\gamma A_{t-1}$. Its proportional increase is:</p><div class="math-display">$$g_A=\frac{\gamma A_{t-1}-A_{t-1}}{A_{t-1}}=\gamma-1$$</div><p>The numerator is the increase in technology. Dividing by the previous level gives the growth rate associated with one successful innovation.</p></div>
+      <div class="result-row"><strong>With probability $1-\mu$: innovation fails</strong><p>Technology remains at $A_{t-1}$, so $g_A=0$ for that period.</p></div>
+      <p>Expected growth weights each outcome by its probability. Success contributes $\mu(\gamma-1)$ and failure contributes zero. Using the probability of success obtained above gives:</p>
+      <div class="math-display boxed">$$E(g_A)=\lambda^{\frac{1}{1-\sigma}}(\sigma\pi L)^{\frac{\sigma}{1-\sigma}}(\gamma-1)$$</div>
+      <div class="definition-strip"><h4>Read the two ingredients separately</h4><p>Expected growth combines how likely an innovation is with how much technology improves when it succeeds. It summarises the uncertain outcomes; it does not mean that the same innovation occurs in every period.</p></div>
+    </section>
+
+    <section class="concept-card blue-top" id="growth-determinants">
+      <div class="section-header"><span class="section-label">Determinants</span><h3>What determines the economy’s growth rate?</h3></div>
+      <div class="math-display boxed-blue">$$g=E(g_A)=\lambda^{\frac{1}{1-\sigma}}(\sigma\pi L)^{\frac{\sigma}{1-\sigma}}(\gamma-1)$$</div>
+      <p>The course highlights three determinants of expected economic growth in this expression.</p>
+      <div class="idea-list">
+        <div class="idea-row"><span class="idea-index">1</span><div><h4>Research efficiency: $\lambda$</h4><p>More efficient research raises the probability of producing an innovation. It therefore raises expected growth through the frequency of successful research outcomes.</p></div></div>
+        <div class="idea-row"><span class="idea-index">2</span><div><h4>The size of innovation: $\gamma$</h4><p>A larger technological improvement produces a larger increase in productivity when research succeeds. This appears in the growth formula through $\gamma-1$.</p></div></div>
+        <div class="idea-row"><span class="idea-index">3</span><div><h4>Population and market size: $L$</h4><p>A larger population increases the scale of profits available to the intermediate-good producer. Through the research choice and success probability, this raises expected growth in the model.</p></div></div>
+      </div>
+    </section>
+
+    <section class="concept-card purple-top" id="non-drastic-innovation">
+      <div class="section-header"><span class="section-label">Extension</span><h3>Extension to non-drastic innovation</h3></div>
+      <p>The extension considers innovations that are not large enough to leave the innovator free from competitive pressure. The support describes competitors as being able to imitate the new intermediate good. This competition reduces its price and therefore the profit attached to the innovation.</p>
+      <p>Because the prospect of profit motivates research, a smaller reward can reduce research intensity. The point made here is that <strong>too much competition in the intermediate-good sector can reduce research and the economy’s growth rate</strong>.</p>
+      <figure class="competition-figure">
+        <div class="graph-placeholder" role="img" aria-label="Reserved space for a small graph: productivity growth against the degree of product market competition."><span>Small graph</span><small>Competition and productivity growth</small></div>
+        <figcaption>The figure in the support has <strong>productivity growth</strong> on the vertical axis and the <strong>degree of product market competition</strong> on the horizontal axis. Its inverted U shape shows growth first increasing with competition, reaching a maximum at an intermediate level, and then decreasing as competition becomes stronger.</figcaption>
+      </figure>
+    </section>
+
+    <h2 class="course-part">Policy implications</h2>
+
+    <section class="concept-card amber-top" id="rd-subsidies">
+      <div class="section-header"><span class="section-label">R&amp;D policy</span><h3>Should research and development be subsidised?</h3></div>
+      <p>Because research creates externalities, the decentralised equilibrium is not necessarily as good as the centralised outcome. Private researchers choose their expenditure according to their own expected profits, whereas a centralised assessment takes the effects on the economy into account.</p>
+      <p>In a creation–destruction model, there can be <strong>too much research</strong>. Innovation produces both positive and negative externalities: the economy benefits beyond the innovator’s rent, but innovation also affects future research and destroys the previous innovation.</p>
+      <div class="takeaway"><h4>The implication for subsidies</h4><p>The presence of externalities does not, by itself, establish that private research is insufficient. The positive and negative effects explain why the course does not give an unconditional argument for increasing research through subsidies.</p></div>
+    </section>
+
+    <section class="concept-card blue-top" id="rd-returns">
+      <div class="section-header"><span class="section-label">R&amp;D returns</span><h3>What do we know about the return to research?</h3></div>
+      <p>The course reports that the private return to R&amp;D is probably quite high in rich countries, at around <strong>20–30%</strong>, and describes it as higher than the return to physical investment. The private return is the return received by those undertaking the research.</p>
+      <p>The total return also includes benefits beyond those received privately. The gap between total and private returns is difficult to quantify. The studies cited in the support suggest that the total return can be <strong>up to three times the private return</strong>; this is an empirical estimate, rather than a fixed multiplier in the model.</p>
+      <p class="source-note">Studies cited in the course: Sveikauskas (2007) and Bloom et al. (2013).</p>
+    </section>
+
+    <section class="concept-card green-top" id="other-policies">
+      <div class="section-header"><span class="section-label">Institutions</span><h3>Other policies and the level of development</h3></div>
+      <div class="definition-strip"><h4>Protect people, not jobs</h4><p>The principle of <em>flexicurity</em> is to protect people while allowing jobs and production activities to change. In the context of creative destruction, protection is directed towards workers rather than towards preserving every existing job.</p></div>
+      <p>The institutions that promote growth depend on the economy’s level of development. The course distinguishes countries catching up with existing technologies from countries already at the technological frontier.</p>
+      <div class="result-row"><strong>Catching-up countries</strong><p>Growth requires adapting existing technologies to the country. Large firms can help carry out this adaptation because they benefit from economies of scale. Since the risk is relatively limited, long-term relationships between banks and firms are suited to financing these activities.</p></div>
+      <div class="result-row"><strong>Frontier countries</strong><p>Growth comes from risky research activities. Venture capital is therefore better suited than bank finance to these activities. The government cannot reliably pick the future winner, so competition is needed both in research and in goods and services markets.</p></div>
+      <p class="source-note">Reference cited in the course: Acemoglu, Aghion and Zilibotti (2006).</p>
+    </section>
+
+  </main>
+</div>
+<script>
+function toggleSidebar(){const sidebar=document.getElementById('sidebar');sidebar.classList.toggle('open');document.getElementById('main-wrap').classList.toggle('expanded');document.querySelector('.topbar-toggle').setAttribute('aria-expanded',String(sidebar.classList.contains('open')))}
+function initChapterProgress(){const container=document.getElementById('chapterProgressBar');const cards=Array.from(document.querySelectorAll('.concept-card,.exo-card'));if(!container||!cards.length)return;const segments=cards.map((card,index)=>{const segment=document.createElement('div');segment.className='progress-segment'+(index===0?' active':'');const heading=card.querySelector('h3');segment.title=heading?heading.textContent:`Section ${index+1}`;segment.setAttribute('role','button');segment.setAttribute('tabindex','0');const jump=()=>card.scrollIntoView({behavior:'smooth',block:'start'});segment.addEventListener('click',jump);segment.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();jump()}});container.appendChild(segment);return segment});function update(){let active=0;cards.forEach((card,index)=>{if(card.getBoundingClientRect().top<=160)active=index});segments.forEach((segment,index)=>segment.className='progress-segment'+(index<active?' completed':index===active?' active':''))}window.addEventListener('scroll',update,{passive:true});update()}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initChapterProgress);else initChapterProgress();if(window.matchMedia('(max-width:900px)').matches)toggleSidebar();
+</script>
+</body>
+</html>

@@ -578,17 +578,19 @@ mjx-container[display="true"] { max-width:100%; overflow-x:auto; overflow-y:hidd
           <text x="490" y="174" fill="#94a3b8" font-size="12" font-family="Outfit" text-anchor="end">c = C / (AL)</text>
           <text x="40" y="14" fill="#94a3b8" font-size="12" font-family="Outfit">Utility</text>
 
-          <!-- u(c) curve: increasing concave -->
-          <path d="M 40 160 Q 90 60 480 40" fill="none" stroke="#c084fc" stroke-width="3" />
+          <!-- CRRA illustration with epsilon = 1/2: u(c) = 2 sqrt(c), u'(c) = c^(-1/2).
+               The two curves use separate vertical scales because they measure utility and marginal utility. -->
+          <!-- u(c) curve: increasing, concave, with an infinite slope as c approaches zero -->
+          <polyline points="40.0,160.0 45.5,148.8 51.0,144.2 56.5,140.6 62.0,137.6 67.5,135.0 73.0,132.6 78.5,130.4 84.0,128.4 89.5,126.5 95.0,124.6 100.5,122.9 106.0,121.3 111.5,119.7 117.0,118.2 122.5,116.7 128.0,115.3 133.5,113.9 139.0,112.6 144.5,111.3 150.0,110.0 155.5,108.8 161.0,107.6 166.5,106.4 172.0,105.2 177.5,104.1 183.0,103.0 188.5,101.9 194.0,100.8 199.5,99.8 205.0,98.8 210.5,97.8 216.0,96.8 221.5,95.8 227.0,94.8 232.5,93.9 238.0,92.9 243.5,92.0 249.0,91.1 254.5,90.2 260.0,89.3 265.5,88.4 271.0,87.5 276.5,86.7 282.0,85.8 287.5,85.0 293.0,84.2 298.5,83.4 304.0,82.5 309.5,81.7 315.0,80.9 320.5,80.2 326.0,79.4 331.5,78.6 337.0,77.8 342.5,77.1 348.0,76.3 353.5,75.6 359.0,74.9 364.5,74.1 370.0,73.4 375.5,72.7 381.0,72.0 386.5,71.3 392.0,70.6 397.5,69.9 403.0,69.2 408.5,68.5 414.0,67.8 419.5,67.1 425.0,66.5 430.5,65.8 436.0,65.1 441.5,64.5 447.0,63.8 452.5,63.2 458.0,62.5 463.5,61.9 469.0,61.3 474.5,60.6 480.0,60.0" fill="none" stroke="#c084fc" stroke-width="3" stroke-linejoin="round" />
           <text x="485" y="44" fill="#c084fc" font-size="13" font-weight="700" font-family="Outfit">u(c)</text>
 
           <!-- u'(c) curve: decreasing from infinity -->
-          <path d="M 44 25 Q 60 120 480 152" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="4,4" />
-          <text x="485" y="156" fill="#34d399" font-size="13" font-weight="700" font-family="Outfit">u'(c) = c^(-&#x3B5;)</text>
+          <polyline points="46.6,37.5 52.0,69.2 57.4,84.6 62.9,94.2 68.3,100.8 73.7,105.8 79.1,109.7 84.5,112.8 89.9,115.5 95.4,117.7 100.8,119.6 106.2,121.3 111.6,122.8 117.0,124.1 122.4,125.3 127.9,126.4 133.3,127.4 138.7,128.3 144.1,129.2 149.5,129.9 154.9,130.7 160.4,131.3 165.8,131.9 171.2,132.5 176.6,133.1 182.0,133.6 187.5,134.1 192.9,134.6 198.3,135.0 203.7,135.4 209.1,135.8 214.5,136.2 220.0,136.5 225.4,136.9 230.8,137.2 236.2,137.5 241.6,137.8 247.0,138.1 252.5,138.4 257.9,138.7 263.3,138.9 268.7,139.2 274.1,139.4 279.6,139.7 285.0,139.9 290.4,140.1 295.8,140.3 301.2,140.5 306.6,140.7 312.1,140.9 317.5,141.1 322.9,141.3 328.3,141.5 333.7,141.6 339.1,141.8 344.6,142.0 350.0,142.1 355.4,142.3 360.8,142.4 366.2,142.6 371.7,142.7 377.1,142.9 382.5,143.0 387.9,143.1 393.3,143.3 398.7,143.4 404.2,143.5 409.6,143.6 415.0,143.8 420.4,143.9 425.8,144.0 431.2,144.1 436.7,144.2 442.1,144.3 447.5,144.4 452.9,144.5 458.3,144.6 463.7,144.7 469.2,144.8 474.6,144.9 480.0,145.0" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="4,4" stroke-linejoin="round" />
+          <text x="405" y="156" fill="#34d399" font-size="13" font-weight="700" font-family="Outfit">u'(c) = c^(-&#x3B5;)</text>
 
           <!-- Annotations -->
           <circle cx="40" cy="160" r="3.5" fill="#c084fc" />
-          <text x="50" y="32" fill="#34d399" font-size="11" font-family="Outfit">slope → ∞</text>
+          <text x="51" y="140" fill="#c084fc" font-size="11" font-family="Outfit">slope → ∞</text>
         </svg>
         <span style="font-size:0.8rem;color:var(--text-3);font-style:italic;">
           The instantaneous utility function $u(c)$ is strictly increasing ($u'(c) > 0$) and strictly concave ($u''(c) < 0$).

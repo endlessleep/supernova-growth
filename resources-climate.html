@@ -269,10 +269,12 @@
 <!-- Source: 32 -->
 <section class="concept-card purple-top" id="dice-welfare" data-source="32">
 <div class="section-header"><span class="section-label">Objective</span><h3>Discounted economic welfare</h3></div>
-<p>The planner compares welfare at different dates. Consumption gives utility per person, population turns this into total welfare, discounting gives future welfare a different weight, and the integral adds these weighted values through time.</p>
+<p>The planner compares welfare at different dates. The objective first values consumption for each person, then aggregates it over the population and through time.</p>
 <div class="formula-story"><span class="formula-caption">THE PLANNER ADDS WELFARE ACROSS TIME</span><div class="math-display boxed-purple">$$W=\int_{2020}\frac{c(t)^{1-\epsilon}}{1-\epsilon}L(t)e^{-(\rho+pr+ad)}$$</div></div>
 <div class="compact-list"><div class="compact-item"><strong>Consumption utility</strong><p>$c(t)^{1-\epsilon}/(1-\epsilon)$: welfare per person.</p></div><div class="compact-item"><strong>Population</strong><p>$L(t)$: turns per-person welfare into total welfare.</p></div><div class="compact-item"><strong>Discounting</strong><p>$e^{-(\rho+pr+ad)}$: gives a weight to future welfare.</p></div><div class="compact-item"><strong>Integral</strong><p>Adds weighted welfare over time.</p></div></div>
-<p>The term $\rho$ captures preference for utility sooner rather than later. The terms $pr$ and $ad$ adjust this discounting for the risks represented in the model. The next equation determines the output that can be consumed once damage and abatement costs are taken into account.</p>
+<div class="course-explanation" id="read-dice-welfare"><h4>Why future welfare receives a different weight</h4><p>The exponential term is multiplied by utility because the planner does not give the same weight to welfare at every date. Its discount rate has three components, each with a separate role.</p></div>
+<div class="explanation-grid"><div class="explanation-card blue"><h4>Pure time preference: $\rho$</h4><p>$\rho$ captures a preference for utility sooner rather than later. It therefore raises the discount rate applied to future welfare.</p></div><div class="explanation-card green"><h4>Precautionary term: $pr$</h4><p>$pr$ reflects uncertainty about consumption growth. In this objective, it reduces the discount rate.</p></div><div class="explanation-card amber"><h4>Climate-investment adjustment: $ad$</h4><p>$ad$ adjusts for the non-diversifiable risk of climate investment. In this objective, it increases the discount rate.</p></div></div>
+<p>This objective does not yet tell us what the economy can consume. The next equation determines the output available after climate damage and abatement costs.</p>
 </section>
 
 

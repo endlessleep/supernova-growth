@@ -260,7 +260,7 @@
 <!-- Source: 26–31 -->
 <section class="concept-card blue-top" id="dice-introduction" data-source="26–31">
 <div class="section-header"><span class="section-label">DICE</span><h3>Linking the world economy and the climate</h3></div>
-<p>The <strong>Dynamic Integrated Climate–Economy model (DICE)</strong> adds one climate channel to the growth framework:</p>
+<p>The <strong>Dynamic Integrated Climate–Economy model (DICE)</strong> starts from the economy and adds the climate channel missing from a standard growth model. Production creates emissions; emissions affect the climate; and climate damage reduces the output available to the economy.</p>
 <div class="chapter-compass"><div class="compass-step"><span>START</span><strong>Production</strong><small>creates emissions</small></div><div class="compass-step"><span>THEN</span><strong>Emissions</strong><small>change the climate</small></div><div class="compass-step"><span>FINALLY</span><strong>Climate damage</strong><small>reduces available output</small></div></div>
 <div class="memory-cue"><div><span>The policy question</span><p>Abatement costs output now, but lower emissions avoid future damage. The planner chooses the path that weighs these two effects.</p></div></div>
 </section>
@@ -269,10 +269,10 @@
 <!-- Source: 32 -->
 <section class="concept-card purple-top" id="dice-welfare" data-source="32">
 <div class="section-header"><span class="section-label">Objective</span><h3>Discounted economic welfare</h3></div>
+<p>The planner compares welfare at different dates. Consumption gives utility per person, population turns this into total welfare, discounting gives future welfare a different weight, and the integral adds these weighted values through time.</p>
 <div class="formula-story"><span class="formula-caption">THE PLANNER ADDS WELFARE ACROSS TIME</span><div class="math-display boxed-purple">$$W=\int_{2020}\frac{c(t)^{1-\epsilon}}{1-\epsilon}L(t)e^{-(\rho+pr+ad)}$$</div></div>
 <div class="compact-list"><div class="compact-item"><strong>Consumption utility</strong><p>$c(t)^{1-\epsilon}/(1-\epsilon)$: welfare per person.</p></div><div class="compact-item"><strong>Population</strong><p>$L(t)$: turns per-person welfare into total welfare.</p></div><div class="compact-item"><strong>Discounting</strong><p>$e^{-(\rho+pr+ad)}$: gives a weight to future welfare.</p></div><div class="compact-item"><strong>Integral</strong><p>Adds weighted welfare over time.</p></div></div>
-<p class="formula-caption">NEXT: determine the output that can be consumed after damage and abatement.</p>
-<div class="formula-note"><p>The notation shown here does not write an upper integration limit, an integration differential, or the time dependence inside the discount factor. Those missing elements are not filled in.</p></div>
+<p>The term $\rho$ captures preference for utility sooner rather than later. The terms $pr$ and $ad$ adjust this discounting for the risks represented in the model. The next equation determines the output that can be consumed once damage and abatement costs are taken into account.</p>
 </section>
 
 
@@ -280,6 +280,7 @@
 <section class="concept-card green-top" id="dice-production" data-source="33">
 <div class="section-header"><span class="section-label">Production</span><h3>Output after climate damage and abatement costs</h3></div>
 <div class="formula-story"><span class="formula-caption">START WITH PRODUCTION, THEN APPLY TWO DEDUCTIONS</span><div class="math-display boxed">$$Y_t=(1-\Lambda(t))(1-\Omega(t))A(t)K(t)^\alpha L(t)^{1-\alpha},\qquad 0<\alpha<1$$</div></div>
+<p>$A(t)K(t)^\alpha L(t)^{1-\alpha}$ is output before climate considerations. $1-\Omega(t)$ is the share remaining after climate damage, while $1-\Lambda(t)$ is the share remaining after the resources used for abatement have been deducted. Both apply to the same production base.</p>
 <div class="formula-chain"><div class="formula-node"><strong>$A(t)K(t)^\alpha L(t)^{1-\alpha}$</strong><span>production before climate costs</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>$1-\Omega(t)$</strong><span>share left after climate damage</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>$1-\Lambda(t)$</strong><span>share left after abatement cost</span></div></div>
 </section>
 
@@ -288,6 +289,7 @@
 <section class="concept-card amber-top" id="dice-damages" data-source="34">
 <div class="section-header"><span class="section-label">Damage function</span><h3>Temperature change and output losses</h3></div>
 <div class="formula-story"><span class="formula-caption">WARMING → OUTPUT LOSS</span><div class="math-display boxed-amber">$$\Omega(t)=\Phi_1T_{AT}(t)+\Phi_2T_{AT}(t)^2$$</div></div>
+<p>The damage term is built from atmospheric temperature change. The linear term links damage directly to warming; the squared term allows the relationship to change as warming becomes larger.</p>
 <div class="compact-list"><div class="compact-item"><strong>$T_{AT}(t)$</strong><p>Temperature change from the preindustrial level.</p></div><div class="compact-item"><strong>$\Phi_1,\Phi_2$</strong><p>Translate warming into the output-loss fraction.</p></div><div class="compact-item"><strong>Squared term</strong><p>Lets the damage relationship change as warming becomes larger.</p></div></div>
 </section>
 
@@ -296,6 +298,7 @@
 <section class="concept-card blue-top" id="dice-abatement" data-source="35">
 <div class="section-header"><span class="section-label">Abatement</span><h3>The cost of controlling emissions</h3></div>
 <div class="formula-story"><span class="formula-caption">MORE CONTROL USES MORE RESOURCES</span><div class="math-display boxed-blue">$$\Lambda(t)=\theta_1(t)\mu(t)^{\theta_2}$$</div></div>
+<p>The planner controls emissions through the abatement rate $\mu(t)$. This is not free: cleaner production or avoided emissions use output that cannot be used elsewhere. $\Lambda(t)$ is this resource cost in the production equation above.</p>
 <div class="compact-list"><div class="compact-item"><strong>$\mu(t)$</strong><p>Fraction of emissions controlled.</p></div><div class="compact-item"><strong>$\theta_2$</strong><p>How cost changes as control becomes more stringent.</p></div><div class="compact-item"><strong>$\theta_1(t)$</strong><p>Scale of abatement cost at date $t$.</p></div><div class="compact-item"><strong>Backstop technology</strong><p>Makes complete control possible; its cost falls as it improves.</p></div></div>
 </section>
 
@@ -304,6 +307,7 @@
 <section class="concept-card green-top" id="dice-emissions" data-source="36">
 <div class="section-header"><span class="section-label">Emissions</span><h3>From production to greenhouse-gas emissions</h3></div>
 <div class="formula-story"><span class="formula-caption">ADD EMISSIONS, THEN REMOVE THE CONTROLLED FRACTION</span><div class="math-display boxed">$$ECO_2(t)=\bigl(\sigma(t)Y(t)+ECO_{2,\mathrm{land}}(t)\bigr)(1-\mu(t))$$</div></div>
+<p>Production emissions and land-use emissions have different origins, so the model first adds them. It then applies $1-\mu(t)$, the fraction of total emissions that remains after abatement.</p>
 <div class="formula-chain"><div class="formula-node"><strong>$\sigma(t)Y(t)$</strong><span>production emissions</span></div><div class="formula-arrow">+</div><div class="formula-node"><strong>$ECO_{2,\mathrm{land}}(t)$</strong><span>land-use emissions</span></div><div class="formula-arrow">×</div><div class="formula-node"><strong>$1-\mu(t)$</strong><span>fraction left after control</span></div></div>
 <p class="formula-caption">NON-CO₂ GASES FOLLOW THE SAME CONTROL RULE</p>
 <div class="math-display ">$$ECO_{2,\mathrm{nonCO_2}}(t)=ECO_{2,\mathrm{nonCO_2base}}(1-\mu(t))$$</div>
@@ -313,6 +317,7 @@
 <!-- Source: 37–39 -->
 <section class="concept-card blue-top" id="dice-scenarios" data-source="37–39">
 <div class="section-header"><span class="section-label">Scenarios</span><h3>Different policy questions, different simulations</h3></div>
+<p>Every scenario uses the same link from output to emissions, climate damage and welfare. What changes is the rule for choosing $\mu(t)$ or the assumptions used to evaluate that choice, so each simulation answers a distinct policy question.</p>
 <p class="formula-caption">SAME MODEL · DIFFERENT RULE FOR CHOOSING $\mu(t)$</p>
 <div class="study-grid three"><div class="study-unit" id="scenario-baseline"><span class="eyebrow">REFERENCE</span><h4>Baseline</h4><p>Keep existing policies and the assumed carbon-price path.</p></div><div class="study-unit blue" id="scenario-optimal"><span class="eyebrow">CHOICE</span><h4>Cost–benefit optimal</h4><p>Choose $\mu(t)$ by weighing current abatement cost against future damage.</p></div><div class="study-unit amber" id="scenario-temperature"><span class="eyebrow">CONSTRAINT</span><h4>Temperature limit</h4><p>Maximise welfare while staying below a temperature ceiling.</p></div><div class="study-unit purple" id="scenario-discount"><span class="eyebrow">WEIGHTING</span><h4>Discount rates</h4><p>Change the importance given to future welfare.</p></div><div class="study-unit" id="scenario-damages"><span class="eyebrow">DAMAGE</span><h4>Damage function</h4><p>Change how warming becomes output loss.</p></div><div class="study-unit blue" id="scenario-paris"><span class="eyebrow">COMMITMENT</span><h4>Paris Accord</h4><p>Keep commitments in place over a longer horizon.</p></div></div>
 <div class="memory-cue"><div><span>Implementation constraint</span><p>The control rate cannot rise arbitrarily fast. A desirable path must also be feasible to implement.</p></div></div>
@@ -322,6 +327,7 @@
 <!-- Source: 40–43 -->
 <section class="concept-card green-top" id="social-carbon-cost" data-source="40–43">
 <div class="section-header"><span class="section-label">SCC</span><h3>The social cost of carbon</h3></div>
+<p>The <strong>social cost of carbon</strong> summarises one marginal step in the climate–economy chain: it is the monetary value of the damage caused by one additional tonne of CO₂. It gives the damage side of the comparison between abatement and emissions.</p>
 <div class="formula-chain"><div class="formula-node"><strong>One extra tonne of CO₂</strong><span>adds one marginal emission</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>Climate effects</strong><span>create damage over time</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>SCC</strong><span>values that damage in money</span></div></div>
 <div class="memory-cue"><div><span>What to retain</span><p>The <strong>social cost of carbon</strong> is the monetary value of the damage caused by one additional tonne of CO₂. It is the damage side of the abatement-versus-emissions comparison.</p></div></div>
 </section>
@@ -330,6 +336,7 @@
 <!-- Source: 44–46 -->
 <section class="concept-card amber-top" id="different-damages" data-source="44–46">
 <div class="section-header"><span class="section-label">Model differences</span><h3>Why do damage estimates differ so much?</h3></div>
+<p>An SCC is not a single mechanical number. It changes with the climate effects included, the way warming becomes damage, the role of adaptation and the weight attached to future losses.</p>
 <div class="compact-list"><div class="compact-item"><strong>Effects included</strong><p>Temperature alone, or also precipitation and extreme weather.</p></div><div class="compact-item"><strong>Damage profile</strong><p>How quickly losses rise with warming.</p></div><div class="compact-item"><strong>Adaptation</strong><p>Whether future adaptation changes the effect of a climate shock.</p></div><div class="compact-item"><strong>Discounting</strong><p>How future losses are valued today.</p></div></div>
 <p class="formula-caption">THE KEY DISTINCTION FOR LONG-RUN GROWTH</p><div class="explanation-grid"><div class="explanation-card blue"><h4>Output level</h4><p>Output shifts downward. Once the climate stabilises, it can grow again at its earlier rate from this lower level.</p></div><div class="explanation-card amber"><h4>Growth rate</h4><p>The rate of output growth changes, so the loss continues through the future path.</p></div></div>
 <div class="memory-cue"><div><span>Next step</span><p>Technology is no longer simply given: the next model makes the direction of innovation a choice.</p></div></div>
@@ -344,6 +351,8 @@
 <!-- Source: 50–51 -->
 <section class="concept-card green-top" id="dtc-introduction" data-source="50–51">
 <div class="section-header"><span class="section-label">Directed innovation</span><h3>Innovation responds to economic incentives</h3></div>
+<p>In DICE, technology affects production and abatement costs, but its direction is not chosen inside the model. Here, researchers choose which technology to improve, and their decision responds to the profit created by a successful innovation.</p>
+<p>Climate policy can therefore affect emissions directly by changing production incentives and indirectly by changing the technologies that researchers find worthwhile to improve.</p>
 <div class="chapter-compass"><div class="compass-step"><span>DICE</span><strong>Technology is given</strong><small>policy changes emissions directly</small></div><div class="compass-step"><span>HERE</span><strong>Researchers choose</strong><small>profit directs innovation</small></div><div class="compass-step"><span>POLICY</span><strong>Changes rewards</strong><small>and so changes the direction of innovation</small></div></div>
 <div class="study-grid"><div class="study-unit blue"><span class="eyebrow">COMPLEMENTARY INPUTS</span><h4>Save energy</h4><p>Innovation makes each unit of energy more productive.</p></div><div class="study-unit"><span class="eyebrow">SUBSTITUTABLE INPUTS</span><h4>Redirect innovation</h4><p>Clean and dirty inputs can replace one another; AABH studies this case.</p></div></div>
 </section>
@@ -352,6 +361,7 @@
 <!-- Source: 52 -->
 <section class="concept-card amber-top" id="aabh-policy-overview" data-source="52">
 <div class="section-header"><span class="section-label">AABH</span><h3>How policy redirects innovation</h3></div>
+<p>The mechanism starts with monopoly profit from specialised machines. This determines expected research rewards, which guide the direction of technological progress. Policy changes these rewards and can therefore redirect innovation.</p>
 <div class="formula-chain"><div class="formula-node"><strong>Machine profit</strong><span>creates a private reward</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>Research reward</strong><span>guides scientists</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>Innovation direction</strong><span>changes future technology</span></div></div>
 <div class="memory-cue"><div><span>Role of policy</span><p>Policy changes those rewards. This is the channel through which taxes and research subsidies can redirect innovation.</p></div></div>
 </section>
@@ -362,6 +372,7 @@
 <div class="section-header"><span class="section-label">Production</span><h3>Clean and dirty inputs</h3></div>
 <div class="sector-flow"><div class="sector-step"><strong>Final-good firms</strong><span>combine clean input $Y_c$ and dirty input $Y_d$</span></div><div class="flow-arrow">→</div><div class="sector-step"><strong>Input sectors</strong><span>make $Y_c$ or $Y_d$ with labour and machines</span></div><div class="flow-arrow">→</div><div class="sector-step"><strong>Machine monopolists</strong><span>sell specialised varieties to each sector</span></div></div>
 <div class="formula-story"><span class="formula-caption">CLEAN AND DIRTY INPUTS MAKE FINAL OUTPUT</span><div class="math-display boxed">$$Y=\left(Y_c^{\frac{\varepsilon-1}{\varepsilon}}+Y_d^{\frac{\varepsilon-1}{\varepsilon}}\right)^{\frac{\varepsilon}{\varepsilon-1}}$$</div></div>
+<p>The final-good sector combines the clean input $Y_c$ and the dirty input $Y_d$. Each input is produced in its own sector using labour and specialised machines, so research can improve the machine quality used in either sector.</p>
 <div class="memory-cue"><div><span>Key assumption</span><p><strong>$\varepsilon>1$:</strong> clean and dirty inputs are substitutable. Demand can move towards the relatively more attractive input.</p></div></div>
 <div class="formula-story"><span class="formula-caption">ONE INPUT SECTOR: LABOUR + ALL MACHINE VARIETIES</span><div class="math-display boxed-blue">$$Y_j=\frac{1}{1-\beta}L_j^\beta\int_0^1 A_{ji}^\beta x_{ji}^{1-\beta}\,di$$</div></div>
 <div class="compact-list" id="read-aabh-production"><div class="compact-item"><strong>$j=c,d$</strong><p>Clean or dirty input sector.</p></div><div class="compact-item"><strong>$i\in[0,1]$</strong><p>Machine variety; the integral adds all varieties.</p></div><div class="compact-item"><strong>$A_{ji}$</strong><p>Quality of that machine variety — the object research improves.</p></div><div class="compact-item"><strong>Next step</strong><p>Find how much of one machine variety the buyer wants to use.</p></div></div><div class="formula-note"><p>The factor $1/(1-\beta)$ belongs to the production function. It cancels the $1-\beta$ produced by the power rule when machine demand is differentiated.</p></div>
@@ -501,6 +512,7 @@
 <!-- Source: 66–67 -->
 <section class="concept-card green-top" id="energy-saving-inputs" data-source="66–67">
 <div class="section-header"><span class="section-label">Energy-saving DTC</span><h3>Improving energy services when substitution is difficult</h3></div>
+<p>This model changes the substitution assumption. Production needs both a general production input, $Y_P$, and energy services, $Y_E$. Innovation can improve the technology used to create either input, but additional production input cannot simply replace a lack of energy services.</p>
 <div class="formula-chain"><div class="formula-node"><strong>General input $Y_P$</strong><span>uses labour and machines</span></div><div class="formula-arrow">+</div><div class="formula-node"><strong>Energy services $Y_E$</strong><span>use energy and machines</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>Final output $Y_t$</strong><span>needs both inputs</span></div></div>
 <div class="formula-story"><span class="formula-caption">FINAL OUTPUT</span><div class="math-display boxed">$$Y_t=\left(Y_{Pt}^{\frac{\varepsilon-1}{\varepsilon}}+Y_{Et}^{\frac{\varepsilon-1}{\varepsilon}}\right)^{\frac{\varepsilon}{\varepsilon-1}}$$</div></div>
 <div class="memory-cue"><div><span>Key assumption</span><p><strong>$0<\varepsilon<1$:</strong> the inputs are complementary. Green innovation therefore makes energy services more productive rather than simply replacing energy.</p></div></div>
@@ -511,6 +523,7 @@
 <!-- Source: 67–68 -->
 <section class="concept-card purple-top" id="energy-research-incentives" data-source="67–68">
 <div class="section-header"><span class="section-label">Research incentives</span><h3>Innovation favours the relatively lagging input</h3></div>
+<p>Scientists choose the sector with the higher expected research reward. The ratio below compares production-sector and energy-sector research: it combines their success probabilities, the allocation of researchers and the relative effective quantities of the two inputs.</p>
 <div class="formula-story"><span class="formula-caption">COMPARE THE TWO EXPECTED REWARDS</span><div class="math-display boxed-purple">$$\frac{\Pi_{Pt}}{\Pi_{Et}}=\frac{h_P}{h_E}\left(\frac{1+\gamma h_Es_{Et}}{1+\gamma h_Ps_{Pt}}\right)\left(\frac{LA_{Pt}}{EA_{Et}}\right)^{\frac{\sigma-1}{\sigma}}$$</div></div>
 <div class="compact-list"><div class="compact-item"><strong>$h_P/h_E$</strong><p>Compares research success probabilities.</p></div><div class="compact-item"><strong>$s_{Pt},s_{Et}$</strong><p>Record the current allocation of scientists.</p></div><div class="compact-item"><strong>$LA_{Pt}/EA_{Et}$</strong><p>Compares effective, not just physical, inputs.</p></div><div class="compact-item"><strong>Exponent</strong><p>Its sign determines which input attracts innovation when it lags behind.</p></div></div>
 <div class="formula-story"><span class="formula-caption">COMPLEMENTARITY MAKES THE EXPONENT NEGATIVE</span><div class="math-display ">$$\sigma=1+\beta(\varepsilon-1),\qquad 0<\sigma<1$$</div></div>
@@ -524,6 +537,7 @@
 <!-- Source: 68 -->
 <section class="concept-card blue-top" id="energy-balanced-growth" data-source="68">
 <div class="section-header"><span class="section-label">Long run</span><h3>Balanced growth with energy-saving innovation</h3></div>
+<p>When the physical resource flow is constant, the negative exponent creates a stabilising force: a technology that falls relatively behind becomes the more attractive target for research. Innovation therefore does not keep pushing one technology ever further ahead.</p>
 <div class="memory-cue"><div><span>Stabilising force</span><p>With a constant physical resource flow, the technology that falls behind becomes more attractive for research.</p></div></div><div class="mechanism-chain"><div class="mechanism-step"><span class="step-count">1</span><div><h4>Lagging input</h4><p>It attracts innovation.</p></div></div><div class="mechanism-step"><span class="step-count">2</span><div><h4>Balanced growth</h4><p>Both technologies grow at the <strong>same rate</strong>.</p></div></div><div class="mechanism-step"><span class="step-count">3</span><div><h4>Research balance</h4><p>Expected profits are <strong>equal</strong>.</p></div></div></div><div class="formula-story"><span class="formula-caption">NEITHER SECTOR OFFERS A HIGHER REWARD</span><div class="math-display boxed">$$\Pi_{Pt}=\Pi_{Et}$$</div></div>
 <div class="formula-story" id="read-energy-bgp"><span class="formula-caption">LONG-RUN ENERGY INCOME SHARE</span><div class="math-display boxed-blue">$$\text{energy income share}=\frac{h_E}{h_E+h_P}$$</div></div>
 <button type="button" class="toggle-btn derivation-btn" aria-expanded="false" aria-controls="calc-energy-share" onclick="toggleDerivation(this)"><span class="toggle-label">Show derivation: check the energy-income share from research balance</span><span class="arrow" aria-hidden="true">▾</span></button>
@@ -536,6 +550,7 @@
 <!-- Source: 69 -->
 <section class="concept-card amber-top" id="energy-policy" data-source="69">
 <div class="section-header"><span class="section-label">Policy</span><h3>A smaller role for research subsidies</h3></div>
+<p>Research tends towards the relatively lagging input and helps the economy approach balanced growth. This differs from the clean-versus-dirty model, in which an initial technological lead can reinforce itself.</p>
 <div class="formula-chain"><div class="formula-node"><strong>Lagging input</strong><span>attracts research</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>Balanced growth</strong><span>becomes a stabilising tendency</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>Policy</strong><span>research subsidies play a smaller role</span></div></div>
 <div class="memory-cue"><div><span>Policy result</span><p>A <strong>carbon tax is almost sufficient</strong> to support the energy transition in this setting.</p></div></div>
 </section>
@@ -545,10 +560,12 @@
 <!-- Source: 70–73 -->
 <section class="concept-card green-top" id="shale-framework" data-source="70–73">
 <div class="section-header"><span class="section-label">Shale gas</span><h3>Coal, gas and clean energy in one model</h3></div>
+<p>The model asks what happens when natural gas becomes more abundant. It separates two margins: final production needs both a general production input and electricity, while electricity itself can be produced from coal, gas or clean sources. Innovation continues to follow profitability.</p>
 <div class="formula-chain"><div class="formula-node"><strong>General input $Y_{Pt}$</strong><span>needed for final production</span></div><div class="formula-arrow">+</div><div class="formula-node"><strong>Effective electricity $\widetilde A_tE_t$</strong><span>also needed for final production</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>Output after damage</strong><span>multiplied by $1-D(S_t)$</span></div></div>
 <div class="formula-story"><span class="formula-caption">FINAL PRODUCTION</span><div class="math-display boxed">$$Y_t=(1-D(S_t))\left((1-\nu)Y_{Pt}^{\frac{\lambda-1}{\lambda}}+\nu(\widetilde A_tE_t)^{\frac{\lambda-1}{\lambda}}\right)^{\frac{\lambda}{\lambda-1}}$$</div></div>
 <div class="compact-list" id="read-shale-production"><div class="compact-item"><strong>Effective electricity</strong><p>$\widetilde A_t$ turns physical electricity into energy services.</p></div><div class="compact-item"><strong>$\lambda<1$</strong><p>Electricity and the general input are difficult to replace.</p></div><div class="compact-item"><strong>$1-D(S_t)$</strong><p>Output remaining after climate damage.</p></div><div class="compact-item"><strong>Weights</strong><p>$1-\nu$ and $\nu$ determine the role of each input.</p></div></div>
 <div class="formula-story"><span class="formula-caption">ELECTRICITY CAN COME FROM THREE SUBSTITUTABLE SOURCES</span><div class="math-display boxed-blue">$$E_t=\left(\kappa_cE_{ct}^{\frac{\varepsilon-1}{\varepsilon}}+\kappa_gE_{gt}^{\frac{\varepsilon-1}{\varepsilon}}+\kappa_sE_{st}^{\frac{\varepsilon-1}{\varepsilon}}\right)^{\frac{\varepsilon}{\varepsilon-1}}$$</div></div>
+<p>The three electricity sources are substitutable with one another, even though electricity and the general production input are complementary in final production.</p>
 <div class="memory-cue" id="read-electricity-sources"><div><span>Keep the two margins separate</span><p>$E_{ct}$, $E_{gt}$ and $E_{st}$ are coal, gas and clean electricity. They are substitutable because $\varepsilon>1$.</p></div></div>
 </section>
 
@@ -556,6 +573,7 @@
 <!-- Source: 74–75 -->
 <section class="concept-card blue-top" id="shale-ingredients" data-source="74–75">
 <div class="section-header"><span class="section-label">Model ingredients</span><h3>Innovation, emissions and household welfare</h3></div>
+<p>The gas boom has two effects to follow. It changes the electricity mix immediately because gas competes with coal and clean electricity. It also changes expected research rewards, which affects the future direction of technological change.</p>
 <div class="formula-chain"><div class="formula-node"><strong>Gas becomes abundant</strong><span>changes today’s electricity mix</span></div><div class="formula-arrow">→</div><div class="formula-node"><strong>Research rewards change</strong><span>changes tomorrow’s technology</span></div></div><div class="lesson-rows"><div class="lesson-row purple"><h4>Research</h4><p>Innovation goes to the energy sector offering the <strong>highest expected profit</strong>.</p></div><div class="lesson-row green"><h4>Emissions</h4><p>Gas emits <strong>less CO₂ per unit of electricity</strong> than coal.</p></div><div class="lesson-row blue"><h4>Welfare</h4><p>A representative household values welfare <strong>over time</strong>.</p></div></div><div class="lesson-grid"><div class="lesson-tile amber"><h4>$\lambda<1$</h4><p>Limited substitution between electricity and the general input.</p></div><div class="lesson-tile green"><h4>$\varepsilon>1$</h4><p>Substitution between coal, gas and clean electricity.</p></div></div>
 </section>
 
@@ -563,6 +581,7 @@
 <!-- Source: 75–77 -->
 <section class="concept-card amber-top" id="shale-results" data-source="75–77">
 <div class="section-header"><span class="section-label">Results</span><h3>Short-run emissions and the long-run transition</h3></div>
+<p>The immediate and long-run effects do not point in the same direction. The short run concerns the source of electricity used today; the long run concerns the technology that researchers improve for the future.</p>
 <p class="formula-caption">SHORT RUN AND LONG RUN DO NOT POINT IN THE SAME DIRECTION</p><div class="explanation-grid"><div class="explanation-card blue"><h4>Short run: gas replaces coal</h4><p>Gas emits less CO₂ per unit of electricity than coal, so emissions fall.</p></div><div class="explanation-card amber"><h4>Long run: clean innovation weakens</h4><p>Lower clean-research incentives delay, and may prevent, the zero-carbon transition.</p></div></div><div class="memory-cue"><div><span>Welfare result</span><p>Without policy, the gas boom reduces welfare in the model. Correcting emissions and innovation incentives can reverse this result.</p></div></div>
 </section>
 

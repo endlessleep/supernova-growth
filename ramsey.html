@@ -850,7 +850,7 @@ mjx-container[display="true"] { max-width:100%; overflow-x:auto; overflow-y:hidd
 
       <p style="color:var(--text-2);font-size:0.9rem;line-height:1.65;">
         • Notice that the expression inside the brackets is exactly $\mathbf{\dfrac{dk(t)}{dt}}$.<br>
-        • $\lambda$ is the <strong>shadow price of capital</strong>: the value, in units of utility, of an additional unit of capital per effective worker. It is the multiplier attached to the accumulation equation, not a price quoted in money.
+        • $\lambda$ is the <strong>implicit price of capital</strong>: the value, in units of utility, of an additional unit of capital per effective worker. It is the multiplier attached to the accumulation equation, not a price quoted in money.
       </p>
 
       <p style="color:var(--text-3);font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:14px;">
@@ -872,7 +872,7 @@ mjx-container[display="true"] { max-width:100%; overflow-x:auto; overflow-y:hidd
           <div class="key-note" style="margin-top:12px;">
             <strong>One unit consumed or one unit invested</strong>
             <p style="margin-top:6px;">At a given capital stock, investing one more unit requires reducing current consumption by one unit: consumption enters the accumulation equation with a minus sign. The marginal utility forgone is $u'(c)$; the value of the additional investment is $\lambda$.</p>
-            <p style="margin-top:6px;">At the optimum, these two values must be equal. <strong>The shadow price of capital equals the marginal utility of consumption:</strong></p>
+            <p style="margin-top:6px;">At the optimum, these two values must be equal. <strong>The implicit price of capital equals the marginal utility of consumption:</strong></p>
             <div class="math-display">$$\lambda=u'(c)=c^{-\varepsilon}$$</div>
             <p>If the two values differed, a marginal reallocation between consumption and investment would improve the household’s objective. This equality is the condition on the <strong>control variable $c$</strong>.</p>
           </div>
@@ -888,7 +888,7 @@ mjx-container[display="true"] { max-width:100%; overflow-x:auto; overflow-y:hidd
             ⚠️ Do NOT set $\dfrac{\partial \mathcal{H}}{\partial k} = 0$!
           </p>
           <p style="margin-top:4px;">
-            Because $k$ is a <strong>state variable</strong> (its level is predetermined and evolves over time), its optimality condition is <strong>dynamic</strong> and describes how the shadow value $\lambda$ changes over time:
+            Because $k$ is a <strong>state variable</strong> (its level is predetermined and evolves over time), its optimality condition is <strong>dynamic</strong> and describes how the implicit price of capital $\lambda$ changes over time:
           </p>
           <div class="math-display" style="margin:6px 0;">$$\frac{d\lambda(t)}{dt} = \rho\lambda - \frac{\partial \mathcal{H}}{\partial k}$$</div>
           <p>First, compute the partial derivative of $\mathcal{H}$ with respect to $k$:</p>
@@ -904,8 +904,8 @@ mjx-container[display="true"] { max-width:100%; overflow-x:auto; overflow-y:hidd
           <div class="key-note blue" style="margin-top:12px;">
             <strong>The return on capital must match the required return</strong>
             <p style="margin-top:6px;">Divide the capital condition by $\lambda$ to express it as a rate of return:</p>
-            <div class="math-display boxed-blue">$$\underbrace{\frac{1}{\lambda}\frac{\partial\mathcal H}{\partial k}}_{\text{net productive return}}+\underbrace{\frac{1}{\lambda}\frac{d\lambda(t)}{dt}}_{\text{change in the shadow price}}=\underbrace{\rho}_{\text{required return}}$$</div>
-            <p>The first term is the net contribution of capital to production, $\alpha k^{\alpha-1}-(n+\delta+g_A)$. The second is the proportional change in its shadow price: a gain if $\lambda$ rises, a loss if it falls.</p>
+            <div class="math-display boxed-blue">$$\underbrace{\frac{1}{\lambda}\frac{\partial\mathcal H}{\partial k}}_{\text{net productive return}}+\underbrace{\frac{1}{\lambda}\frac{d\lambda(t)}{dt}}_{\text{change in the implicit price of capital}}=\underbrace{\rho}_{\text{required return}}$$</div>
+            <p>The first term is the net contribution of capital to production, $\alpha k^{\alpha-1}-(n+\delta+g_A)$. The second is the proportional change in its implicit price of capital: a gain if $\lambda$ rises, a loss if it falls.</p>
             <p style="margin-top:6px;">At the optimum, the total return on an additional unit of capital must equal the household’s required rate of return, its <strong>rate of time preference $\rho$</strong>. This is the condition on the <strong>state variable $k$</strong>. Here “return” includes both the productive return and the change in the value of capital.</p>
           </div>
         </div>
@@ -921,7 +921,7 @@ mjx-container[display="true"] { max-width:100%; overflow-x:auto; overflow-y:hidd
           </div>
           <div class="key-note amber" style="margin-top:12px;">
             <strong>The discounted value of remaining capital tends to zero</strong>
-            <p style="margin-top:6px;">The product $\lambda k$ is the shadow value of the remaining capital stock, and $e^{-\rho t}$ discounts that value to the present. Over the infinite horizon, this discounted value must tend to zero: the household must not leave resources with a positive terminal discounted value unconsumed.</p>
+            <p style="margin-top:6px;">The product $\lambda k$ is the implicit price of the remaining capital stock, and $e^{-\rho t}$ discounts that value to the present. Over the infinite horizon, this discounted value must tend to zero: the household must not leave resources with a positive terminal discounted value unconsumed.</p>
             <p style="margin-top:6px;"><strong>This does not mean that $k$ itself must tend to zero.</strong> The condition concerns $e^{-\rho t}\lambda k$. The requirement that physical capital cannot be negative is a feasibility restriction, $k\ge0$, rather than a separate conclusion of the transversality condition.</p>
           </div>
           <div class="key-note purple" style="margin-top:12px;">

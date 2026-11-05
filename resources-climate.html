@@ -136,6 +136,25 @@
 .main-content{padding-top:32px;padding-bottom:52px;gap:22px}.course-part{margin-top:8px}.concept-card,.exo-card{padding:20px;gap:12px}.section-header{margin-bottom:0}.math-display{padding:11px 14px;margin:2px 0}.formula-story{padding:10px 15px}.formula-story .math-display{padding:9px 11px;margin-top:7px}.formula-chain{padding-left:14px}.formula-node{padding:9px 0}.memory-cue{padding:11px 14px}.compact-list{gap:7px}.compact-item{padding:9px 11px}.lesson-row,.mechanism-step{padding:10px 0}.explanation-grid{gap:12px;margin:8px 0}.explanation-card{padding:14px}.toggle-btn{padding:8px 13px}.collapsible{margin-top:6px;padding:14px}.derivation-step{padding:9px 0}
 @media(max-width:640px){.main-content{padding:20px 16px 32px;gap:18px}.concept-card,.exo-card{padding:17px 15px;gap:11px}.math-display{padding:10px}.formula-story{padding:10px 13px}.memory-cue{padding:11px 13px}}
 
+/* Visual anchors for a first read: preserve every explanation, make its logic easy to spot. */
+.concept-card>p:not(.formula-caption),.exo-card>p:not(.formula-caption){position:relative;padding-left:13px;border-left:2px solid var(--green-border);color:#d5e4db}
+.concept-card>p:not(.formula-caption):before,.exo-card>p:not(.formula-caption):before{content:'';position:absolute;left:-4px;top:.78em;width:6px;height:6px;border-radius:50%;background:var(--green-bright);box-shadow:0 0 8px rgba(52,211,153,.55)}
+.concept-card strong,.exo-card strong{font-weight:800;letter-spacing:.005em}
+.concept-card .formula-caption,.concept-card .cue-label,.exo-card .cue-label{font-weight:900;letter-spacing:.055em}
+.concept-card .formula-caption{width:fit-content;padding:2px 7px;border-radius:4px;background:var(--green-muted);border:1px solid var(--green-border)}
+.concept-card .compact-item{border-left:2px solid var(--green-border)}
+.concept-card .compact-item strong{color:var(--green-bright)}
+.green-top :is(p,strong,.formula-caption,.cue-label) strong{color:var(--green-bright);background:rgba(16,185,129,.12);box-shadow:inset 0 -1px 0 rgba(52,211,153,.45);padding:0 .14em;border-radius:3px}
+.blue-top :is(p,strong,.formula-caption,.cue-label) strong{color:var(--blue-bright);background:rgba(96,165,250,.12);box-shadow:inset 0 -1px 0 rgba(96,165,250,.45);padding:0 .14em;border-radius:3px}
+.amber-top :is(p,strong,.formula-caption,.cue-label) strong{color:var(--amber-bright);background:rgba(251,191,36,.11);box-shadow:inset 0 -1px 0 rgba(251,191,36,.42);padding:0 .14em;border-radius:3px}
+.purple-top :is(p,strong,.formula-caption,.cue-label) strong{color:var(--purple-bright);background:rgba(192,132,252,.12);box-shadow:inset 0 -1px 0 rgba(192,132,252,.45);padding:0 .14em;border-radius:3px}
+.blue-top .formula-caption{color:var(--blue-bright);background:var(--blue-muted);border-color:var(--blue-border)}.amber-top .formula-caption{color:var(--amber-bright);background:var(--amber-muted);border-color:var(--amber-border)}.purple-top .formula-caption{color:var(--purple-bright);background:var(--purple-muted);border-color:var(--purple-border)}
+.blue-top .compact-item{border-left-color:var(--blue-border)}.blue-top .compact-item strong{color:var(--blue-bright)}.amber-top .compact-item{border-left-color:var(--amber-border)}.amber-top .compact-item strong{color:var(--amber-bright)}.purple-top .compact-item{border-left-color:var(--purple-border)}.purple-top .compact-item strong{color:var(--purple-bright)}
+.blue-top .mechanism-step h4,.blue-top .step-count{color:var(--blue-bright)}.amber-top .mechanism-step h4,.amber-top .step-count{color:var(--amber-bright)}.purple-top .mechanism-step h4,.purple-top .step-count{color:var(--purple-bright)}
+.blue-top .step-count{background:var(--blue-muted);border-color:var(--blue-border)}.amber-top .step-count{background:var(--amber-muted);border-color:var(--amber-border)}.purple-top .step-count{background:var(--purple-muted);border-color:var(--purple-border)}
+.blue-top .mechanism-step:not(:last-child):after{background:var(--blue-border)}.amber-top .mechanism-step:not(:last-child):after{background:var(--amber-border)}.purple-top .mechanism-step:not(:last-child):after{background:var(--purple-border)}
+@media(max-width:640px){.concept-card>p:not(.formula-caption),.exo-card>p:not(.formula-caption){padding-left:11px}.concept-card .formula-caption{font-size:.64rem;padding:2px 5px}}
+
 </style>
 </head>
 <body>
